@@ -12,7 +12,12 @@ var db = mongoose.connection;
 //var Position = db.collection('Position');
 //var page; 
 router.get('/create', function(req, res) {
+  console.log("Rendering CREATE NPC page");
     res.render('createNPC');
+});
+
+router.post('/create', function(req, res) {
+   console.log("Button pressed?"); 
 });
 
 /*router.get('/view', function(req, res) {
@@ -228,3 +233,4 @@ router.post("/delete", function(req, res) {
 });
 
 module.exports = router; */
+module.exports = router;

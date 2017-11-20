@@ -13,7 +13,7 @@ var flash = require('connect-flash');
 var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-
+var NPC = require('./routes/NPCs.js');
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.NAME, {
@@ -82,10 +82,10 @@ app.use(function(req, res, next) {
     res.locals.user = req.user || null;
     next();
 });
-
+ 
 //app.use('/', routes);
 app.use('/users', users);
-
+app.use('/NPC', NPC); 
 
 MongoClient.connect(mLab, function(err, db) {
  
