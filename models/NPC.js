@@ -20,7 +20,7 @@ NPCSchema.index({
     question: 'text'
 });
 
-var NPC = module.exports = mongoose.model('Poll', NPCSchema);
+var NPC = module.exports = mongoose.model('NPC', NPCSchema);
 //PollSchema.plugin(autoIncrement.plugin, {model: 'Poll', startAt: 0});
 module.exports.createNPC = function(newNPC, callback) {
       console.log(newNPC);

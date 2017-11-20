@@ -12,12 +12,20 @@ var db = mongoose.connection;
 //var Position = db.collection('Position');
 //var page; 
 router.get('/create', function(req, res) {
-  console.log("Rendering CREATE NPC page");
+    console.log("Rendering CREATE NPC page");
     res.render('createNPC');
 });
 
 router.post('/create', function(req, res) {
-   console.log("Button pressed?"); 
+
+    var newNPC = new NPC(req.body);
+    NPC.createNPC(newNPC, function(err, NPC) {
+        if (err) throw err;
+    });
+
+    req.flash('success_msg', 'Your NPC was created.');
+
+    res.redirect('/');
 });
 
 /*router.get('/view', function(req, res) {
@@ -45,7 +53,7 @@ router.post('/create', function(req, res) {
     if (Object.hasOwnProperty.call(req.body, "user")) {
         req.body.user = req.user.username;
     };
-  
+
   function positionConfigure(){
 
     Position.find({}).forEach(function(item) {
@@ -60,9 +68,8 @@ router.post('/create', function(req, res) {
 
   }
 
-    
     function checkErrors(position) {
-  
+
         for (var key in req.body) {
             if (req.body[key] != '' && key != 'question' && key != 'user' && key != "OpenAnswers" && key != "Multiple" && key != "Captcha" && key != "IP" && key != "Change" && key != "SeeResults") {
                 numberOfOptions++;
@@ -88,14 +95,14 @@ router.post('/create', function(req, res) {
                 throw err;
             } else {
                 if (result != "Not in docs") {
-               
+
                     errors.push({
                         msg: 'Question is  already in the database.'
                     });
 
                 }
                 restOfCreate(position);
-               
+
             }
         });
 
@@ -103,14 +110,14 @@ router.post('/create', function(req, res) {
     positionConfigure();
 
     function restOfCreate(position) {
- 
+
         if (errors.length != 0 && errors.length != undefined) {
             res.render('create', {
                 errors: errors,
             });
             errors = [];
         } else {
-       
+
             for (var key in req.body) {
                 if (req.body[key] == '') {
                     delete req.body[key];
@@ -130,10 +137,10 @@ router.post('/create', function(req, res) {
                     parsed["user"] = req.body[key];
                 }
             }
-          
+
             parsed["_id"] = position; 
             parsed["Position"] = position;
-   
+
             var newPoll = new Poll(parsed);
             Poll.createPoll(newPoll, function(err, Poll) {
                 if (err) throw err;
@@ -155,7 +162,7 @@ router.get('/edit/:id', function(req, res) {
 });
 
 router.post('/edit/', function(req, res) {
-  
+
     var numberOfOptions;
     var errors = [];
     if (req.body["reply"] != null) {
@@ -206,11 +213,11 @@ router.post('/edit/', function(req, res) {
 
         parsed["user"] = req.user.username;
         parsed["Position"] = req.body.Position;
-      
+
         var newPoll = new Poll(parsed);
         Poll.replace(newPoll, function(err, Poll) {
             if (err) throw err;
-          
+
         });
 
         req.flash('success_msg', 'Changes Saved.');
