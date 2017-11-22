@@ -28,6 +28,9 @@ router.post('/create', function(req, res) {
     res.redirect('/');
 });
 
+router.get('/NPClisting', function(req, res) {
+    res.render('NPClisting');
+});
 /*router.get('/view', function(req, res) {
     res.render('pollListings');
 });
