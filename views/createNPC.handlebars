@@ -1,38 +1,110 @@
 <!DOCTYPE html>
-<h2 class="page-header">Create Poll</h2> 
+<h2 class="page-header">Create NPC</h2> 
 <html>
 
 <body>
-    The only information required is the name. 
+    The only information required is the name. All other fields are optional.
     <form method="post" action="/NPC/create">
-        <label for="Name">Enter the Character's Name:</label>
-       <input id="Name" type="text" name="Name" placeholder="Name">
+        <label for="Name">[Required. Will be displayed on NPC listing]Enter the Character's Name:</label>
+      <textarea  id="Name" name="Name" placeholder="Name"> </textarea>
      
       <h2>
-        Description
+        Physical Description
       </h2>
       <label for="PDesc">Enter the Character's Physical Description:</label>
        <input id="PDesc" type="text" name="PDesc" placeholder="Physical Description">
       <br>
       
-      <label for="Gender">Enter the Character's Gender:</label>
+      <label for="Gender">[Will be displayed on NPC listing] Enter the Character's Gender:</label>
        <input id="Gender" type="text" name="Gender" placeholder="Gender">
         <br>
       
-      <label for="Race">Enter the Character's Race:</label>
+      <label for="Race">[Will be displayed on NPC listing] Enter the Character's Race (human, elf, dwarf, etc.):</label>
        <input id="Race" type="text" name="Race" placeholder="Race">
         <br>
       
-      <label for="Profession">Enter the Character's Profession:</label>
-       <input id="Profession" type="text" name="Profession" placeholder="Profession">
+      <label for="Profession">[Will be displayed on NPC listing] Enter the Character's Profession or Class:</label>
+       <input id="Profession" type="text" name="Profession" placeholder="Profession or Class">
         <br>
       
-      <label for="Age">Enter the Character's Age:</label>
+      <label for="Age">[Will be displayed on NPC listing] Enter the Character's Age:</label>
        <input id="Age" type="text" name="Age" placeholder="Age">
         <br>
       
+     
+         <h2>
+         Mental Description and Plot Hooks
+      </h2>
+      <label for="Goals">Enter the Character's Goals:</label>
+       <input id="Goals" type="text" name="Goals" placeholder="Goals">
+      <br>
       
+      <label for="Fear">Enter the Character's Fears:</label>
+       <input id="Fear" type="text" name="Fear" placeholder="Fear">
+        <br>
       
+      <label for="Belief">Enter the Character's Core Beliefs:</label>
+       <input id="Belief" type="text" name="Belief" placeholder="Belief">
+        <br>
+      
+      <label for="Value">Enter where the Character sees Value:</label>
+       <input id="Value" type="text" name="Value" placeholder="Value">
+        <br>
+      
+      <label for="Location">[Will be displayed on NPC listing] Enter the Character's typical location:</label>
+       <input id="Location" type="text" name="Location" placeholder="Location">
+        <br>
+      
+      <label for="Hook">Enter potential plot hooks:</label>
+       <input id="Hook" type="text" name="Hook" placeholder="Hook">
+        <br>
+      
+       <label for="Backstory">Enter the Character's Backstory:</label>
+       <input id="Backstory" type="text" name="Backstory" placeholder="Backstory">
+        <br>
+      <h2>
+         Personality
+      </h2>
+      <label for="persBrief">[Will be displayed on NPC listing] Enter the Character's Personality IN ONE WORD:</label>
+       <input  maxlength="15" id="persBrief" type="text" name="persBrief" placeholder="One word personality">
+        <br>
+           
+      <label for="Personality">Enter the Character's Personality:</label>
+       <input id="Personality" type="text" name="Personality" placeholder="Personality">
+        <br>
+      
+      <label for="Speech">Enter the Character's Speech Patterns, Mannerisms, quotes & sayings:</label>
+       <input id="Speech" type="text" name="Speech" placeholder="Speech">
+        <br>
+      
+       <h2>
+         Affiliations
+      </h2>
+      
+      <label for="NPCs">Enter other NPCs the Character knows and their relationship:</label>
+       <input  id="NPCs" type="text" name="NPCs" placeholder="Affiliated NPCs (feel free to add links to them)">
+        <br>
+          
+       <label for="FactionName">[Will be displayed on NPC listing] Enter the Character's Faction Name</label>
+       <input  maxlength="30" id="FactionName" type="text" name="FactionName" placeholder="Name of Faction">
+        <br>
+      
+      <label for="FactionDesc">Enter the Character's Faction Description:</label>
+       <input id="FactionDesc" type="text" name="FactionDesc" placeholder="Faction Description">
+        <br>
+      
+       <h2>
+         Mechanics
+      </h2>
+      
+      <label for="Stats">Enter the Character's Notable Stats:</label>
+       <input  id="Stats" type="text" name="Stats" placeholder="Stats">
+        <br>
+          
+       <label for="Items">Enter the Character's Notable Items:</label>
+       <input  id="Items" type="text" name="Stats" placeholder="Items">
+        <br>
+       
       <button type="submit"  style="margin-top: 10px;" value="Send order">Submit</button>
       
       <!--
