@@ -3,11 +3,69 @@
 <h2 class="page-header">View NPCs</h2> 
 <html>
 <head>
-    <title>Voting App</title>
+    <title>NPC App</title>
     <link href="/public/css/main.css" rel="stylesheet" type="text/css">
 </head>
-<body>
-	<div id="anchor">We could find no NPCs by that search term</div>
-    <script type="text/javascript" src="/controllers/voteController.client.js"></script>
-</body>
+	 <body ng-controller="NPCController" ng-app="NPCApp">
+  
+     <div id="NPCContainer">
+       <div ng-repeat="NPC in NPCs" class="NPCContainer">
+         <h3>
+            {[{NPC.name}]}
+         </h3>
+         <div class="PhysicalDescription">
+           <ul>
+             <li>
+               {[{NPC.Profession}]};
+             </li>
+             <li>
+               {[{NPC.Age}]};
+             </li>
+             <li>
+               {[{NPC.Gender}]};
+             </li>
+             <li>
+               {[{NPC.Race}]};
+             </li>
+           </ul>
+         </div>
+          <div class="MentalDescription">
+           <ul>
+             <li>
+               {[{NPC.persBrief}]};
+             </li>
+             <li>
+               {[{NPC.Location}]};
+             </li>
+             <li>
+               {[{NPC.FactionType}]};
+             </li>
+           </ul>
+         </div>
+         <p>
+           Hooks:
+           {[{NPC.Hook}]}
+         </p>
+         <p>
+           Drives:
+           {[{NPC.Drive}]}
+         </p>
+         <img ng-src="{[{store.image}]}" class="image"/>
+         <div class="right">
+            <a ng-href="{[{store.url}]}" class="fa fa-external-link" > View on Yelp
+            </a>
+            <h3> {[{store.name}]} </h3>
+            <p> {[{store.address}]}, {[{store.city}]} </p>
+            <p> Rating: {[{store.rating}]} / 5 </p>
+            <p> Price: {[{store.price}]} </p>
+            <p> {[{store.amountOfUsers}]} going </p>
+            {{#if user}} <button class="rsvp" id="{[{store.buttonID}]}">{[{store.buttonText}]}</button> {{/if}} 
+         </div>
+       </div>
+     </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+      <script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script type="text/javascript" src="/controllers/NPC.client.js"></script>
+   </body>
+
 </html>
