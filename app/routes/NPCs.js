@@ -16,6 +16,11 @@ router.get('/create', function(req, res) {
     res.render('createNPC');
 });
 
+router.get('/testing', function(req, res) {
+    console.log("Rendering CREATE NPC page");
+    res.render('help');
+});
+
 router.post('/create', function(req, res) {
 
     var newNPC = new NPC(req.body);
