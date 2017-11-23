@@ -1,5 +1,6 @@
-'use strict';
+
 (function(){
+
    console.log("Hello!");
   
     var app = angular.module('NPCApp', []);
@@ -10,4 +11,5 @@
     app.controller('NPCController', function($scope) {
       
     });
+
  })

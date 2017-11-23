@@ -23,6 +23,7 @@
   "author": "Nicolas Crumrine",
   "license": "MIT",
   "dependencies": {
+    "angular": "*",
     "body-parser": "^1.18.2",
     "chart.js": "^2.7.1",
     "cookie-parser": "^1.4.3",
