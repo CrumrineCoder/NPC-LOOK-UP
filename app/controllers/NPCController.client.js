@@ -38,16 +38,10 @@ console.log("Hi");
             console.log(data);
             var NPCObject = JSON.parse(data);
             console.log(NPCObject);
-            var number;
-            if (NPCObject.length != 0) {
-                for (var i = 0; i < NPCObject.length; i++) {
-                    number = 0;
-                    for (var key in NPCObject[i]) {
-                        if (!isNaN(parseInt(NPCObject[i][key])) && key != "_id" && key != "IP" && key != "question" && key != "Position") {
-                            number += NPCObject[i][key];
-                        }
-                    }
-                }
+            for (var i = 0; i < NPCObject.length; i++) {
+                $scope.$apply(function() {
+                    $scope.NPCs.push(NPCObject[i]);
+                });
             }
         }
         ready(ajaxRequest('GET', apiUrl + "api/listings", showNPCs));

@@ -8,7 +8,7 @@ Plan:
 
 [DONE]1) Build a form that has optinal fields except for the name. Able to submit it with the forms filled in and it be added to the database.
 
-2) Ability to see the NPCs, search functionality like name:Nic, personality:quirky and it'll return whatever meets the most OR meets all of those conditions
+[CAN SEE ALL NPCS]2) Ability to see the NPCs, search functionality like name:Nic, personality:quirky and it'll return whatever meets the most OR meets all of those conditions
 
 3) The ability to add a comment to a NPC, such as how they used the NPC and how it turned out, or what they love about it. Upvote system? 
 
