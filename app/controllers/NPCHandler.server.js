@@ -2,7 +2,7 @@
 // This file gets the polls collection data from the db and handles adding votes to the database
 function NPCHandler(db) {
  var npc = db.collection('npcs');
- this.getPolls = function(req, res) {
+ this.getAllNPCs = function(req, res) {
         npc.find({}, {
             __v: 0
         }).toArray(function(err, documents) {
