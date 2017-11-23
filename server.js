@@ -13,7 +13,7 @@ var flash = require('connect-flash');
 var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var NPC = require('./app/routes/NPCs.js');
+
  
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.NAME, {
@@ -22,6 +22,7 @@ mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.NAME, {
 var db = mongoose.connection;
 //var polls = require('./app/routes/polls.js');
 var users = require('./app/routes/users.js');
+var NPC = require('./app/routes/NPCs.js');
 var express = require('express'),
     routes = require('./app/routes/index.js'),
     mongodb = require('mongodb');
