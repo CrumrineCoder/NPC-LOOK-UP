@@ -15,19 +15,30 @@ router.get('/create', function(req, res) {
     console.log("Rendering CREATE NPC page");
     res.render('createNPC');
 });
-
 router.post('/create', function(req, res) {
-
-    var newNPC = new NPC(req.body);
-    NPC.createNPC(newNPC, function(err, NPC) {
-        if (err) throw err;
-    });
-
-    req.flash('success_msg', 'Your NPC was created.');
-
-    res.redirect('/');
+    var errors = [];
+    for (var key in req.body) {
+        if (key == 'Name' && req.body[key] == '') {
+            errors.push({
+                msg: 'Name is required'
+            });
+        }
+    }
+   console.log(errors);
+    if (errors.length != 0 && errors.length != undefined) {
+        res.render('createNPC', {
+            errors: errors,
+        });
+  //      errors = [];
+    } else {
+        var newNPC = new NPC(req.body);
+        NPC.createNPC(newNPC, function(err, NPC) {
+            if (err) throw err;
+        });
+        req.flash('success_msg', 'Your NPC was created.');
+        res.redirect('/');
+    }
 });
-
 router.get('/NPClisting', function(req, res) {
     res.render('NPClisting');
 });

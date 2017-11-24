@@ -5,19 +5,20 @@ A website for looking up NPCs for use in tabletop games.
 Plan: 
 
 Create NPC:
-Make only the name required
-Make a few questions fill themselves based on previous answers in the database and do large textareas etc for the rest
+1.Make only the name required
+2.Make a few questions fill themselves based on previous answers in the database and do large textareas etc for the rest
+3. Include the user who created the NPC in the database
 
 Edit NPC:
-The ability to even do so
-User verification
-Delete a NPC
+1.The ability to even do so
+2.User verification
+3.Delete a NPC
 
 View NPC:
-Correct formatting
-Clicking on it's name will bring the user to a more detailed page about the NPC
-Commenting ability
-Ability to report a comment or NPC for spam or offensive material
+1.Correct formatting
+2.Clicking on it's name will bring the user to a more detailed page about the NPC
+3.Commenting ability
+4.Ability to report a comment or NPC for spam or offensive material
 Search functionality
 
 User Story 1: I can see all NPCs by compact and then expand to see the full page if I'm interested. 
