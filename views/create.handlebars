@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <h2 class="page-header">Create NPC</h2> 
 <html>
-
+  <head>
+      <link href="/public/css/main.css" rel="stylesheet" type="text/css">
+  </head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>  
 <body>
+
     The only information required is the name. All other fields are optional.
-    <form method="post" action="/NPC/create">
-        <label for="Name">[Required. Will be displayed on NPC listing]Enter the Character's Name:</label>
-      <input  id="Name" name="Name" placeholder="Gandalf the Grey"> </input>
+    <form method="post" action="/NPC/create" novalidate ng-submit="NPCFORM.$valid" name="NPCFORM">
+        <label required for="Name">[Required. Will be displayed on NPC listing]Enter the Character's Name:</label>
+      <input id="Name" name="Name" placeholder="Gandalf the Grey" required/> 
      
       <h2>
         Physical Description
@@ -23,8 +27,8 @@
        <input id="Profession" type="text" name="Profession" placeholder="Wizard">
         <br>
       
-      <label for="Age">[Will be displayed on NPC listing] Enter the Character's Age:</label>
-       <input id="Age" type="text" name="Age" placeholder="2019">
+      <label for="Age" >[Will be displayed on NPC listing] Enter the Character's Age:</label>
+       <input id="Age" type="text" name="Age" placeholder="2019" 
         <br>
   
       <label for="PDesc">Enter the Character's Physical Description:</label>

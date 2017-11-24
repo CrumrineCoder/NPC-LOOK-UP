@@ -13,23 +13,15 @@ var db = mongoose.connection;
 //var page; 
 router.get('/create', function(req, res) {
     console.log("Rendering CREATE NPC page");
-    res.render('createNPC');
+    res.render('create');
 });
 router.post('/create', function(req, res) {
-    var errors = [];
-    for (var key in req.body) {
-        if (key == 'Name' && req.body[key] == '') {
-            errors.push({
-                msg: 'Name is required'
-            });
-        }
-    }
-   console.log(errors);
-    if (errors.length != 0 && errors.length != undefined) {
-        res.render('createNPC', {
-            errors: errors,
+    req.checkBody('Name', 'Name is required').notEmpty();
+    var errors = req.validationErrors();
+     if (errors) {
+        res.render('create', {
+            errors: errors
         });
-  //      errors = [];
     } else {
         var newNPC = new NPC(req.body);
         NPC.createNPC(newNPC, function(err, NPC) {
