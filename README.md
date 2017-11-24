@@ -4,21 +4,21 @@ A website for looking up NPCs for use in tabletop games.
 
 Plan: 
 
-[DONE] 0) Login, need to be logged in to make and edit a NPC
+Create NPC:
+Make only the name required
+Make a few questions fill themselves based on previous answers in the database and do large textareas etc for the rest
 
-[DONE]1) Build a form that has optinal fields except for the name. Able to submit it with the forms filled in and it be added to the database.
+Edit NPC:
+The ability to even do so
+User verification
+Delete a NPC
 
-[CAN SEE ALL NPCS]2) Ability to see the NPCs, search functionality like name:Nic, personality:quirky and it'll return whatever meets the most OR meets all of those conditions
-
-3) The ability to add a comment to a NPC, such as how they used the NPC and how it turned out, or what they love about it. Upvote system? 
-
-4) The user who created a NPC should be able to delete or edit its entry. 
-
-5) How to do art hosting? Probably need to make this for github hosting instead of Glitch. 
-
-6) Introduce a formless mode? 
-
-
+View NPC:
+Correct formatting
+Clicking on it's name will bring the user to a more detailed page about the NPC
+Commenting ability
+Ability to report a comment or NPC for spam or offensive material
+Search functionality
 
 User Story 1: I can see all NPCs by compact and then expand to see the full page if I'm interested. 
   Users will be looking for the hook, the profession, the race, the gender, the age, the location, a quick insight into the personality, what type of faction they're in, and what their goals, beliefs, flaw and fears are.
