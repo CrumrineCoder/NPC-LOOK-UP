@@ -8,15 +8,15 @@
 <body>
 
     The only information required is the name. All other fields are optional.
-    <form method="post" action="/NPC/create" novalidate ng-submit="NPCFORM.$valid" name="NPCFORM">
+    <form method="post" action="/NPC/create"  name="npcCreationForm">
         <label required for="Name">[Required. Will be displayed on NPC listing]Enter the Character's Name:</label>
-      <input id="Name" name="Name" placeholder="Gandalf the Grey" required/> 
+      <input ng-model="Name" id="Name" name="Name" placeholder="Gandalf the Grey" required/> 
      
       <h2>
         Physical Description
       </h2>
    <label for="Gender">[Will be displayed on NPC listing] Enter the Character's Gender:</label>
-       <input id="Gender" type="text" name="Gender" placeholder="Male">
+       <input id="Gender"  type="text" name="Gender" placeholder="Male">
         <br>
   
   <label for="Race">[Will be displayed on NPC listing] Enter the Character's Race (human, elf, dwarf, etc.):</label>
@@ -99,7 +99,7 @@
        <input  id="Items" type="text" name="Items" placeholder="Staff of Wizardry, Ring of Spell Storing">
         <br>
        
-      <button type="submit"  style="margin-top: 10px;" value="Send order">Submit</button>
+      <button type="submit"  style="margin-top: 10px;" value="Send order" ng-disabled="npcCreationForm.$invalid">Submit</button>
       
       <!--
       <div id="right">
