@@ -20,8 +20,14 @@
         <br>
   
   <label for="Race">[Will be displayed on NPC listing] Enter the Character's Race (human, elf, dwarf, etc.):</label>
-       <input id="Race" type="text" name="Race" placeholder="Istari">
-        <br>
+       <input id="Race" type="text" name="Race" placeholder="Istari" list="RaceList">
+       <datalist id="RaceList">
+        <option>select</option>
+    <option >English</option>
+    <option>Tamil</option>
+    <option>Telugu</option>
+      </datalist>  
+      <br>
   
    <label for="Profession">[Will be displayed on NPC listing] Enter the Character's Profession or Class:</label>
        <input id="Profession" type="text" name="Profession" placeholder="Wizard">
