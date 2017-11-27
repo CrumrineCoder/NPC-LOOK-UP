@@ -5,7 +5,7 @@ A website for looking up NPCs for use in tabletop games.
 Plan: 
 
 Create NPC:
-1.Make only the name required [DONE, NEED TO DISPLAY THE ERROR]
+1.Make only the name required [DONE]
 2.Make a few questions fill themselves based on previous answers in the database and do large textareas etc for the rest
 3. Include the user who created the NPC in the database
 

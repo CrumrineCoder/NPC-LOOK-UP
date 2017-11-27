@@ -4,3 +4,13 @@ input.ng-invalid {
 input.ng-valid {
     background-color:lightgreen;
 }
+
+
+textarea {
+    resize: none;
+    overflow: hidden;
+    min-height: 50px;
+    max-height: 100px;
+}
+
+#createNPCFORM input, #createNPCFORM textarea{display: block;}
