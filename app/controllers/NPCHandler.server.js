@@ -7,10 +7,12 @@ function NPCHandler(db) {
             __v: 0
         }).toArray(function(err, documents) {
             if (err) throw err
-          var result = documents.map(function(a) {return a.Race;});
-          console.log(result);
+        
+        
             res.json(documents);
         })
     }
  }
+
+
 module.exports = NPCHandler;

@@ -1,59 +1,61 @@
-
 <html>
+
 <head>
     <title>NPC App</title>
-    
+
 </head>
 
-  	 <body ng-app="npc" ng-controller="npcController">
-  
-     <div id="NPCContainer">
-       <div ng-repeat="NPC in NPCs" class="NPCContainer">
-         <h3>
+<body ng-app="npc" ng-controller="npcController">
+
+    <div id="NPCContainer">
+        <div ng-repeat="NPC in NPCs" class="NPCContainer">
+            <h3>
             {[{NPC.Name}]}
          </h3>
-         <div class="PhysicalDescription">
-           <ul>
-             <li>
-               {[{NPC.Profession}]}
-             </li>
-             <li>
-               {[{NPC.Age}]}
-             </li>
-             <li>
-               {[{NPC.Gender}]}
-             </li>
-             <li>
-               {[{NPC.Race}]}
-             </li>
-           </ul>
-         </div>
-          <div class="MentalDescription">
-           <ul>
-             <li>
-               {[{NPC.persBrief}]}
-             </li>
-             <li>
-               {[{NPC.Location}]}
-             </li>
-             <li>
-               {[{NPC.FactionType}]}
-             </li>
-           </ul>
-         </div>
-         <p>
-           Hooks:
-           {[{NPC.Hook}]}
-         </p>
-         <p>
-           Drives:
-           {[{NPC.Drive}]}
-         </p>
-       </div>
-       </div>
-   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-      <script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script type="text/javascript" src="/controllers/NPCController.client.js"></script>
-   </body>
+            <p>
+                Hooks: {[{NPC.Hook}]}
+            </p>
+            <p>
+                Drives: {[{NPC.Drive}]}
+            </p>
+          <hr align="middle" width="50%">
+            <table class="PhysicalDescription">
+                <tr>
+                    <th>Profession</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Race</th>
+                </tr>
+                <tr>
+                    <th>{[{NPC.Profession}]}</th>
+                    <th>{[{NPC.Age}]}</th>
+                    <th>{[{NPC.Gender}]}</th>
+                    <th> {[{NPC.Race}]}</th>
+                </tr>
+
+            </table>
+          <hr align="middle" width="50%">
+            <table class="MentalDescription">
+                <tr>
+                    <th>Brief Personality</th>
+                    <th>Locations</th>
+                    <th>Type of Faction</th>
+
+                </tr>
+                <tr>
+                    <th>{[{NPC.persBrief}]}</th>
+                    <th>{[{NPC.Location}]}</th>
+                    <th>{[{NPC.FactionType}]}</th>
+
+                </tr>
+
+            </table>
+
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/controllers/NPCController.client.js"></script>
+</body>
 
 </html>

@@ -2,6 +2,15 @@
 
 A website for looking up NPCs for use in tabletop games. 
 
+Proper layout for displaying all of the NPCs created and then more detailed pages when clicked on
+
+Search functionality on the NPC search page
+
+Autosuggest if something has been added before 
+
+Connecting the user to a NPC, and then editing those NPCs
+Commenting on NPCs
+
 Plan: 
 
 Create NPC:

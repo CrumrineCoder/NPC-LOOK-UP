@@ -14,3 +14,27 @@ textarea {
 }
 
 #createNPCFORM input, #createNPCFORM textarea{display: block;}
+
+/* NPC Listing */
+
+table {
+  border-collapse: collapse;
+  width: 100%; 
+}
+
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+#NPCContainer{
+  margin: 0 auto; 
+
+}
+
+.NPCContainer{
+  border: 1px solid black; 
+  padding: 5px;
+  margin: 5px 0px; 
+}
