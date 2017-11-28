@@ -28,6 +28,10 @@ td, th {
   text-align: left;
 }
 
+hr{
+  border-top: 1px solid #CAD2B9;
+}
+
 #NPCContainer{
   margin: 0 auto; 
 

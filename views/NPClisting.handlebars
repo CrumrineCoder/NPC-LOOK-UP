@@ -9,9 +9,9 @@
 
     <div id="NPCContainer">
         <div ng-repeat="NPC in NPCs" class="NPCContainer">
-            <h3>
+         <a ng-href="view/{[{NPC._id}]}">  <h3>
             {[{NPC.Name}]}
-         </h3>
+          </h3> </a>
             <p>
                 Hooks: {[{NPC.Hook}]}
             </p>
@@ -38,7 +38,7 @@
             <table class="MentalDescription">
                 <tr>
                     <th>Brief Personality</th>
-                    <th>Locations</th>
+                    <th>Locations and Downtime</th>
                     <th>Type of Faction</th>
 
                 </tr>

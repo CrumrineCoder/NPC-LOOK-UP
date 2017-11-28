@@ -12,8 +12,10 @@ var db = mongoose.connection;
 //var Position = db.collection('Position');
 //var page; 
 router.get('/create', function(req, res) {
-    console.log("Rendering CREATE NPC page");
     res.render('create');
+});
+router.get('/view/:id', function(req, res) {
+    res.render('view');
 });
 router.post('/create', function(req, res) {
     req.checkBody('Name', 'Name is required').notEmpty();
