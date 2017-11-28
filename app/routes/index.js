@@ -10,5 +10,7 @@ module.exports = function (app, db) {
       });
   app.route('/api/listings')
       .get(npcHandler.getAllNPCs)
+  app.route('/api/NPC/?')
+      .get(npcHandler.getOneNPC)
 };
   
