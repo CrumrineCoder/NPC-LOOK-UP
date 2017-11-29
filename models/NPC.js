@@ -17,7 +17,7 @@ var NPCSchema = mongoose.Schema({
 });
 
 NPCSchema.index({
-    question: 'text'
+    Name: 'text'
 });
 
 var NPC = module.exports = mongoose.model('NPC', NPCSchema);
