@@ -2,10 +2,7 @@
 
 A website for looking up NPCs for use in tabletop games. 
 
-Proper layout for displaying all of the NPCs created and then more detailed pages when clicked on. When the name is clicked on, the user is taken to the id URL of the database; 
-
-Search functionality on the NPC search page
-
+Search functional for just the name and hook; tag system.
 Autosuggest if something has been added before 
 
 Connecting the user to a NPC, and then editing those NPCs
