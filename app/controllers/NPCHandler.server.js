@@ -20,14 +20,15 @@ function NPCHandler(db) {
             res.json(documents);
         })
     }
-   this.Search = function(req, res) {
-     console.log(req.body);
-     
-        /*db.stores.find( { $text: { $search: req.query.text} } ).toArray(function(err, documents) {
+   this.Search = function(req, res) { 
+     console.log(req.body.npcName);
+          npc.find( { $text: { $search: req.body.npcName} }, {
+            __v: 0
+        } ).toArray(function(err, documents) {
             if (err) throw err
           console.log(documents);
             res.json(documents);
-        }) */
+        }) 
     }
   
   
