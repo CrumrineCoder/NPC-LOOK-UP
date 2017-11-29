@@ -18,7 +18,9 @@
             <p>
                 Drives: {[{NPC.Drive}]}
             </p>
-          <hr align="middle" width="50%">
+            <p>
+               {[{NPC.Personality}]}
+           </p>
             <table class="PhysicalDescription">
                 <tr>
                     <th>Profession</th>
@@ -50,6 +52,24 @@
                 </tr>
 
             </table>
+           <table>
+             <tr>
+               <th>
+              Working location and activity
+               </th>
+               <th>
+              Downtime location and activity
+               </th>
+             </tr>
+              <tr>
+               <th>
+              {[{NPC.Location}]}
+               </th>
+               <th>
+                {[{NPC.Downtime}]}
+               </th>
+             </tr>
+     </table>
 
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
