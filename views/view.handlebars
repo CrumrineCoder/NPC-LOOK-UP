@@ -6,23 +6,54 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet" type="text/css">
     <link href="/public/css/main.css" rel="stylesheet" type="text/css">
 </head>
-<body>
-  HELLOOOO
-<!--	<h3 id="question"> </h3>
-   <div id="status"></div>
-  <div id="results"></div>
-   <div class="radio-toolbar">
-   <div id="openRadio"></div>
-  <div id="responses"> </div>
-  </div>
-  <div id="Validation">
-  <div id="captcha_container"></div>
-  </div>
-  <br />
-  <div id="votingButton">
-  <button type='submit' id="makeVisible" class="submitButton" style="visibility: hidden;" > Vote </button>
-  </div>
-  <br /> -->
+<body ng-app="npc" ng-controller="npcController">
+
+   <div id="NPCContainer">
+        <h3>
+            {[{NPC.Name}]}
+          </h3> 
+            <p>
+                Hooks: {[{NPC.Hook}]}
+            </p>
+            <p>
+                Drives: {[{NPC.Drive}]}
+            </p>
+          <hr align="middle" width="50%">
+            <table class="PhysicalDescription">
+                <tr>
+                    <th>Profession</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Race</th>
+                </tr>
+                <tr>
+                    <th>{[{NPC.Profession}]}</th>
+                    <th>{[{NPC.Age}]}</th>
+                    <th>{[{NPC.Gender}]}</th>
+                    <th> {[{NPC.Race}]}</th>
+                </tr>
+
+            </table>
+          <hr align="middle" width="50%">
+            <table class="MentalDescription">
+                <tr>
+                    <th>Brief Personality</th>
+                    <th>Locations and Downtime</th>
+                    <th>Type of Faction</th>
+
+                </tr>
+                <tr>
+                    <th>{[{NPC.persBrief}]}</th>
+                    <th>{[{NPC.Location}]}</th>
+                    <th>{[{NPC.FactionType}]}</th>
+
+                </tr>
+
+            </table>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="/controllers/getSpecificNPC.client.js"></script>
 </body>
 </html>

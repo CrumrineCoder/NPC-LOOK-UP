@@ -14,12 +14,9 @@ function NPCHandler(db) {
         })
     }
   this.getOneNPC = function(req, res) {
-    console.log("If I may be frank");
-    console.log(req.query.id);
         npc.find({ _id: ObjectId(req.query.id )}).toArray(function(err, documents) {
             if (err) throw err
-            console.log(documents);
-        
+      
             res.json(documents);
         })
     }

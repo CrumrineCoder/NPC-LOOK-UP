@@ -1,15 +1,13 @@
-
 (function() {
- var path = window.location.pathname;
-     var page = path.split("/").pop();
-console.log(page);
-/*    var app = angular.module('npc', []);
+    var path = window.location.pathname;
+    var page = path.split("/").pop();
+    var app = angular.module('npc', []);
     app.config(function($interpolateProvider) {
         $interpolateProvider.startSymbol('{[{');
         $interpolateProvider.endSymbol('}]}');
     });
     app.controller('npcController', function($scope) {
-        $scope.NPCs = []; */
+        $scope.NPC = [];
         var apiUrl = 'https://npclookup.glitch.me/';
 
         function ready(fn) {
@@ -37,17 +35,18 @@ console.log(page);
 
         function showNPCs(data) {
             var NPCObject = JSON.parse(data);
-          console.log(NPCObject);
-          var Name = NPCObject.map(function(a) {return a.Name;});
-           var Gender = NPCObject.map(function(a) {return a.Name;});
-           var Race = NPCObject.map(function(a) {return a.Race;});
- 
-     //       for (var i = 0; i < NPCObject.length; i++) {
-    //            $scope.$apply(function() {
-    //                $scope.NPCs.push(NPCObject[i]);
-      //          });
+            /*   console.log(NPCObject[0]);
+                 $scope.$apply(function() {
+                     $scope.NPCs.push(NPCObject);
+                    });
+               console.log($scope.NPCs)*/
+
+            for (var i = 0; i < NPCObject.length; i++) {
+                $scope.$apply(function() {
+                    $scope.NPC = NPCObject[i];
+                });
             }
-     //   }
-        ready(ajaxRequest('GET', apiUrl + "api/NPC/?id="+page, showNPCs));
- //   });
+        }
+        ready(ajaxRequest('GET', apiUrl + "api/NPC/?id=" + page, showNPCs));
+    });
 })();
