@@ -42,3 +42,11 @@ hr{
   padding: 5px;
   margin: 5px 0px; 
 }
+/*
+.limit{
+   width: 200px; 
+    overflow: hidden; 
+    border: 1px solid #f00;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+}*/

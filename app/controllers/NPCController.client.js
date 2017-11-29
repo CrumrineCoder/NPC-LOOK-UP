@@ -1,7 +1,6 @@
-'use strict'
-console.log("Hi");
+'use strict';
 (function() {
-    console.log("Hello!");
+  
     var app = angular.module('npc', []);
     app.config(function($interpolateProvider) {
         $interpolateProvider.startSymbol('{[{');
@@ -35,14 +34,16 @@ console.log("Hi");
         }
 
         function showNPCs(data) {
-            console.log(data);
+            //console.log(data);
             var NPCObject = JSON.parse(data);
-            console.log(NPCObject);
+
+            //console.log(NPCObject);
             for (var i = 0; i < NPCObject.length; i++) {
                 $scope.$apply(function() {
                     $scope.NPCs.push(NPCObject[i]);
                 });
             }
+
         }
         ready(ajaxRequest('GET', apiUrl + "api/listings", showNPCs));
     });
