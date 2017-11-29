@@ -2,23 +2,17 @@
 
 <head>
     <title>NPC App</title>
-
 </head>
 
 <body ng-app="npc" ng-controller="npcController">
-
     <div id="NPCContainer">
         <div ng-repeat="NPC in NPCs" class="NPCContainer">
-         <a ng-href="view/{[{NPC._id}]}">  <h3>
-            {[{NPC.Name}]}
-          </h3> </a>
-            <p class="limit">
-                Hooks: {[{NPC.Hook}]}
-            </p>
-            <p class="limit">
-                Drives: {[{NPC.Drive}]}
-            </p>
-          <hr align="middle" width="50%">
+            <a ng-href="view/{[{NPC._id}]}">
+                <h3> {[{NPC.Name}]} </h3>
+            </a>
+              <span class="bold">Hooks:</span> <p>{[{NPC.Hook}]} </p>
+        <span class="bold">Drives:</span> <p> {[{NPC.Drive}]} </p>
+            <hr align="middle" width="50%">
             <table class="PhysicalDescription">
                 <tr>
                     <th>Profession</th>
@@ -27,30 +21,25 @@
                     <th>Race</th>
                 </tr>
                 <tr>
-                    <th>{[{NPC.Profession}]}</th>
-                    <th>{[{NPC.Age}]}</th>
-                    <th>{[{NPC.Gender}]}</th>
-                    <th> {[{NPC.Race}]}</th>
+                    <td>{[{NPC.Profession}]}</td>
+                    <td>{[{NPC.Age}]}</td>
+                    <td>{[{NPC.Gender}]}</td>
+                    <td> {[{NPC.Race}]}</td>
                 </tr>
-
             </table>
-          <hr align="middle" width="50%">
+            <hr align="middle" width="50%">
             <table class="MentalDescription">
                 <tr>
                     <th>Brief Personality</th>
                     <th>Locations and Downtime</th>
                     <th>Type of Faction</th>
-
                 </tr>
                 <tr>
-                    <th>{[{NPC.persBrief}]}</th>
-                    <th>{[{NPC.Location}]}</th>
-                    <th>{[{NPC.FactionType}]}</th>
-
+                    <td>{[{NPC.persBrief}]}</td>
+                    <td>{[{NPC.Location}]}</td>
+                    <td>{[{NPC.FactionType}]}</td>
                 </tr>
-
             </table>
-
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
