@@ -20,12 +20,14 @@ textarea {
 table {
   border-collapse: collapse;
   width: 100%; 
+  font-weight: normal; 
 }
 
 td, th {
   border: 1px solid #999;
   padding: 0.5rem;
   text-align: left;
+
 }
 
 hr{
@@ -50,3 +52,9 @@ hr{
     text-overflow: ellipsis;
     white-space: nowrap; 
 }*/
+
+/* Individual NPC pages */
+
+.bold{
+  font-weight: bold; 
+}
