@@ -36,13 +36,16 @@ router.post('/create', function(req, res) {
 router.get('/NPClisting', function(req, res) {
     res.render('NPClisting');
 });
+
+router.post('/search/', function(req, res) {
+  console.log("Hello");
+    res.render(process.cwd() + '/views/NPCListing.handlebars');
+});
+
 /*router.get('/view', function(req, res) {
     res.render('pollListings');
 });
 
-router.post('/search/', function(req, res) {
-    res.render(process.cwd() + '/views/pollListings.handlebars');
-});
 
 router.get('/view/:id', function(req, res) {
     res.render('vote');
