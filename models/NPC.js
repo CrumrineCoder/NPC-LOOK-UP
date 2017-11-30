@@ -6,22 +6,36 @@ mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.NAME, {
     useMongoClient: true
 });
 var db = mongoose.connection;
+ var npc = db.collection('npcs');
 //autoIncrement.initialize(db);
 // User Schema
 var NPCSchema = mongoose.Schema({
    Name: {
      type: String
-   }
+   },
+  Background:{
+    type: String
+  }
 }, {
     strict: false
 });
-
+/*
 NPCSchema.index({
-    Name: 'text'
-});
+    Background: 'text'
+});*/
 
+NPCSchema.index({'$**': 'text'});
 
+  
 var NPC = module.exports = mongoose.model('NPC', NPCSchema);
+
+NPC.on('index', function(err) {
+    if (err) {
+        console.error('User index error: %s', err);
+    } else {
+        console.info('User indexing complete');
+    }
+});
 //PollSchema.plugin(autoIncrement.plugin, {model: 'Poll', startAt: 0});
 module.exports.createNPC = function(newNPC, callback) {
       console.log(newNPC);
