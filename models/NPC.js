@@ -1,20 +1,20 @@
-// This file handles the backend for the poll mongoose schema
+// This file handles the backend for the NPC mongoose schema
 var mongoose = require('mongoose');
-//var autoIncrement = require('mongoose-auto-increment');
+//mongoose.set('debug', true);
+
 var bcrypt = require('bcryptjs');
 mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.NAME, {
     useMongoClient: true
 });
 var db = mongoose.connection;
  var npc = db.collection('npcs');
-//autoIncrement.initialize(db);
-// User Schema
+
 var NPCSchema = mongoose.Schema({
    Name: {
      type: String
    },
-  Background:{
-    type: String
+  Backstory:{
+    type: String, text: true 
   }
 }, {
     strict: false
@@ -24,7 +24,8 @@ NPCSchema.index({
     Background: 'text'
 });*/
 
-NPCSchema.index({'$**': 'text'});
+console.log(npc.getIndexes());
+NPCSchema.index({Backstory: 'text'});
 
   
 var NPC = module.exports = mongoose.model('NPC', NPCSchema);
@@ -36,7 +37,7 @@ NPC.on('index', function(err) {
         console.info('User indexing complete');
     }
 });
-//PollSchema.plugin(autoIncrement.plugin, {model: 'Poll', startAt: 0});
+
 module.exports.createNPC = function(newNPC, callback) {
       console.log(newNPC);
       newNPC.save(callback);
