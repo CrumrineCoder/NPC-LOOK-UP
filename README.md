@@ -2,11 +2,10 @@
 
 A website for looking up NPCs for use in tabletop games. 
 
-Search functional for just the name and hook; tag system.
-Autosuggest if something has been added before 
-
-Connecting the user to a NPC, and then editing those NPCs
-Commenting on NPCs
+Tag System for searching
+Connecting the user to a NPC, and then editing those NPCs. Deleting NPC entries.
+Commenting on NPCs; reporting NPCs or comments.
+Have to be a user to create a NPC.
 
 Plan: 
 
@@ -14,6 +13,7 @@ Create NPC:
 1.Make only the name required [DONE]
 2.Make a few questions fill themselves based on previous answers in the database and do large textareas etc for the rest [done]
 3. Include the user who created the NPC in the database
+3a. Verification a user is logged in when creating the NPC [done]
 
 Edit NPC:
 1.The ability to even do so
