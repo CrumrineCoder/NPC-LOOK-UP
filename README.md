@@ -21,11 +21,11 @@ Edit NPC:
 3.Delete a NPC
 
 View NPC:
-1.Correct formatting
-2.Clicking on it's name will bring the user to a more detailed page about the NPC
+1.Correct formatting [done]
+2.Clicking on it's name will bring the user to a more detailed page about the NPC [done]
 3.Commenting ability
 4.Ability to report a comment or NPC for spam or offensive material
-Search functionality
+5.Search functionality [done]
 
 User Story 1: I can see all NPCs by compact and then expand to see the full page if I'm interested. 
   Users will be looking for the hook, the profession, the race, the gender, the age, the location, a quick insight into the personality, what type of faction they're in, and what their goals, beliefs, flaw and fears are.
