@@ -11,7 +11,7 @@ var db = mongoose.connection;
 
 var NPCSchema = mongoose.Schema({
    Name: {
-     type: String
+     type: String, text: true
    },
   Backstory:{
     type: String, text: true 
@@ -24,9 +24,10 @@ NPCSchema.index({
     Background: 'text'
 });*/
 
-console.log(npc.getIndexes());
-NPCSchema.index({Backstory: 'text'});
-
+//console.log(npc.getIndexes());
+NPCSchema.index({"$**":"text"});
+//NPCSchema.createIndex({"Backstory":"text","Name":"text"})
+npc.createIndex({"$**":"text"});
   
 var NPC = module.exports = mongoose.model('NPC', NPCSchema);
 
