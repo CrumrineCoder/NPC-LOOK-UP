@@ -31,14 +31,14 @@ npc.createIndex({"$**":"text"});
   
 var NPC = module.exports = mongoose.model('NPC', NPCSchema);
 
-NPC.on('index', function(err) {
+/*NPC.on('index', function(err) {
     if (err) {
         console.error('User index error: %s', err);
     } else {
         console.info('User indexing complete');
     }
-});
-
+}); */
+ 
 module.exports.createNPC = function(newNPC, callback) {
       console.log(newNPC);
       newNPC.save(callback);
