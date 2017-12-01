@@ -21,12 +21,6 @@ function NPCHandler(db) {
         })
     }
    this.Search = function(req, res) { 
-     console.log(req.body);
-/*npc.find({ Name: req.body.npcName }).toArray(function(err, documents) {
-            if (err) throw err
-      
-            res.json(documents);
-        })*/
          npc.find( { $text: { $search: req.body.npcName} }, {
             __v: 0
         } ).toArray(function(err, documents) {
