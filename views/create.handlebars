@@ -15,19 +15,16 @@
             Physical Description
          </h2>
          <label for="Gender">[Will be displayed on NPC listing] Enter the Character's Gender:</label>
-         <input id="Gender"  type="text" name="Gender" placeholder="Male">
+         <input id="Gender"  type="text" name="Gender" placeholder="Male" list="GenderList">
+         <datalist id="GenderList"></datalist>
          <br>
          <label for="Race">[Will be displayed on NPC listing] Enter the Character's Race (human, elf, dwarf, etc.):</label>
          <input id="Race" type="text" name="Race" placeholder="Istari" list="RaceList">
-         <datalist id="RaceList">
-            <option>select</option>
-            <option >English</option>
-            <option>Tamil</option>
-            <option>Telugu</option>
-         </datalist>
+          <datalist id="RaceList"></datalist>
          <br>
          <label for="Profession">[Will be displayed on NPC listing] Enter the Character's Profession or Class:</label>
-         <input id="Profession" type="text" name="Profession" placeholder="Wizard">
+         <input id="Profession" type="text" name="Profession" placeholder="Wizard" list="ProfessionList">
+         <datalist id="ProfessionList"></datalist>
          <br>
          <label for="Age" >[Will be displayed on NPC listing] Enter the Character's Age:</label>
          <input id="Age" type="text" name="Age" placeholder="2019" list="AgeList"> 
@@ -41,19 +38,20 @@
             Mental Description and Plot Hooks
          </h2>
          <label for="Location">[Will be displayed on NPC listing] Enter the Character's working location and activity:</label>
-         <input id="Location" type="text" name="Location" placeholder="Wandering in Elf territory">
+         <input id="Location" type="text" name="Location" placeholder="Gandalf is wandering in Elf Territory learning from them" list="LocationList">
+         <datalist id="LocationList"></datalist>
          <br>
         <label for="Downtime"> Enter the Character's downtime location and activity:</label>
-         <input id="Downtime" type="text" name="Downtime" placeholder="Selling fireworks to minors, otherwise known as Hobbits">
+         <input id="Downtime" type="text" name="Downtime" placeholder="Selling fireworks to Minors in the Shire">
          <br>
          <label for="Drive">Enter the Character's Drives:</label>
          <textarea onkeyup="auto_grow(this)" id="Drive" type="text" name="Drive" placeholder="The Drives of a character are the character's goals, fears, core beliefs, and what they value."></textarea>
          <br>
          <label for="Hook">Enter potential plot hooks:</label>
-         <textarea onkeyup="auto_grow(this)" id="Hook" type="text" name="Hook" placeholder="He's planning an expedition with Dwarves and wants the party to tag along to avoid an unluck number; He believes the party are the only ones who can destroy an Artifact of Evil"></textarea>
+         <textarea onkeyup="auto_grow(this)" id="Hook" type="text" name="Hook" placeholder="Gandalf is looking for adventurers to journey with him to kill Smaug"></textarea>
          <br>
          <label for="Backstory">Enter the Character's Backstory:</label>
-         <textarea onkeyup="auto_grow(this)" id="Backstory" type="text" name="Backstory" placeholder="An Ishtar sent to Middle Earth to defeat Sauron with others"></textarea>
+         <textarea onkeyup="auto_grow(this)" id="Backstory" type="text" name="Backstory" placeholder="Gandalf was one of the five Istari sent to Middle-earth by the Valar in the Third Age. In Valinor he was known as Olórin."></textarea>
          <br>
          <h2>
             Personality
@@ -74,7 +72,8 @@
          <textarea onkeyup="auto_grow(this)"  id="NPCs" type="text" name="NPCs" placeholder="Bilbo Baggins is a Hobbit friend of Gandalf who is travelling with him."></textarea>
          <br>
          <label for="FactionType">[Will be displayed on NPC listing] Enter the Character's Faction Type</label>
-         <input  maxlength="30" id="FactionType" type="text" name="FactionType" placeholder="Guardian Deities">
+         <input  maxlength="30" id="FactionType" type="text" name="FactionType" placeholder="Guardian Deities" list="FactionList">
+         <datalist id="FactionList"></datalist>
          <br>
          <label for="FactionDesc">Enter the Character's Faction Description:</label>
          <textarea id="FactionDesc" type="text" name="FactionDesc" placeholder="The Wizards, initially known as the Istari, were five Maiar spirits sent to Middle-earth as human forms to aid the Free Peoples against the threat of Sauron."></textarea>
@@ -91,9 +90,10 @@
          <h2>
            Other
         </h2>
+        <br>
         <label for="Other">Enter other notes that don't fit in any other category:</label>
-         <textarea onkeyup="auto_grow(this)"  id="Other" type="text" name="Other"></textarea>
-         <br>
+         <textarea onkeyup="auto_grow(this)"  id="Other" type="text" name="Other" placeholder="The party loved him, but I had to remove him for some fights to avoid an issue where the NPC was clearly stronger than the party, which isn't the intent of my campaign. I had him save the party when they were captured by Trolls, but because they had built a friendship with him they didn't seem to mind that I did this."></textarea>
+
         
         
          <button type="submit"  style="margin-top: 10px;" value="Send order" ng-disabled="npcCreationForm.$invalid">Submit</button>

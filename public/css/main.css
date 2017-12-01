@@ -11,9 +11,10 @@ textarea {
     overflow: hidden;
     min-height: 50px;
     max-height: 100px;
+  width: 100%; 
 }
 
-#createNPCFORM input, #createNPCFORM textarea{display: block;}
+#createNPCFORM input, #createNPCFORM textarea{display: block; width: 100%;}
 
 /* NPC Listing */
 
