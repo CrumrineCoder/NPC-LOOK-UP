@@ -12,10 +12,7 @@ var db = mongoose.connection;
 var NPCSchema = mongoose.Schema({
    Name: {
      type: String, text: true
-   },
-  Backstory:{
-    type: String, text: true 
-  }
+   }
 }, {
     strict: false
 });

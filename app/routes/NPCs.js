@@ -12,7 +12,11 @@ var db = mongoose.connection;
 //var Position = db.collection('Position');
 //var page; 
 router.get('/create', function(req, res) {
-    res.render('create');
+   if (req.user) {
+         res.render('create');
+    } else {
+        res.render('login');
+    }  
 });
 router.get('/view/:id', function(req, res) {
     res.render('view');
