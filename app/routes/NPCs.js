@@ -29,6 +29,7 @@ router.post('/create', function(req, res) {
             errors: errors
         });
     } else {
+        req.body.username = req.user.username; 
         var newNPC = new NPC(req.body);
         NPC.createNPC(newNPC, function(err, NPC) {
             if (err) throw err;
@@ -42,7 +43,6 @@ router.get('/NPClisting', function(req, res) {
 });
 
 router.post('/search/', function(req, res) {
-  console.log("Hello");
     res.render(process.cwd() + '/views/NPCListing.handlebars');
 });
 

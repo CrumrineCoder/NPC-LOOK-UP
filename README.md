@@ -6,6 +6,7 @@ Tag System for searching
 Connecting the user to a NPC, and then editing those NPCs. Deleting NPC entries.
 Commenting on NPCs; reporting NPCs or comments.
 Have to be a user to create a NPC.
+Search formatting
 
 Plan: 
 
