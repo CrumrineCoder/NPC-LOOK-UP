@@ -12,9 +12,12 @@
 </form>
     <div id="NPCContainer">
         <div ng-repeat="NPC in NPCs" class="NPCContainer">
-            <a ng-href="view/{[{NPC._id}]}">
+          <div id="{[{NPC._id}]}">
+            <a ng-href="view/{[{NPC._id}]}" >
                 <h3> {[{NPC.Name}]} </h3>
             </a>
+          </div>
+            
               <span class="bold">Hooks:</span> <p>{[{NPC.Hook}]} </p>
         <span class="bold">Drives:</span> <p> {[{NPC.Drive}]} </p>
             <hr align="middle" width="50%">
