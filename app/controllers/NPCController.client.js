@@ -1,6 +1,5 @@
 'use strict';
 (function() {
-  console.log("Controller"); 
     var app = angular.module('npc', []);
     app.config(function($interpolateProvider) {
         $interpolateProvider.startSymbol('{[{');

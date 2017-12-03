@@ -32,7 +32,18 @@
             xmlhttp.open(method, url, true);
             xmlhttp.send();
         }
-
+      var user;
+      function getUser(callback) {
+             ajaxRequest('GET', apiUrl + "users/user_data", function(data) {
+                 data = JSON.parse(data);
+                 if (data.hasOwnProperty('username')) {
+                     user = data.username;
+                 }
+                 callback();
+             });
+         }
+      getUser(function(){console.log(user)});
+      
         function showNPCs(data) {
             var NPCObject = JSON.parse(data);
             /*   console.log(NPCObject[0]);
