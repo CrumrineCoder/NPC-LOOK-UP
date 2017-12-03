@@ -21,6 +21,9 @@ router.get('/create', function(req, res) {
 router.get('/view/:id', function(req, res) {
     res.render('view');
 });
+router.get('/edit/:id', function(req, res) {
+    res.render('edit');
+});
 router.post('/create', function(req, res) {
     req.checkBody('Name', 'Name is required').notEmpty();
     var errors = req.validationErrors();
