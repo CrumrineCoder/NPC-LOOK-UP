@@ -36,24 +36,29 @@ function auto_grow(element) {
         xmlhttp.open(method, url, true);
         xmlhttp.send();
     }
-
+function uniq(a) {
+    var seen = {};
+    return a.filter(function(item) {
+        return seen.hasOwnProperty(item) ? false : (seen[item] = true);
+    });
+}
     function showNPCs(data) {
         var NPCObject = JSON.parse(data);
-        var Age = NPCObject.map(function(a) {
+        var Age = uniq(NPCObject.map(function(a) {
             return a.Age;
-        });
-        var Profession = NPCObject.map(function(a) {
+        }));
+        var Profession = uniq(NPCObject.map(function(a) {
             return a.Profession;
-        });
-        var Gender = NPCObject.map(function(a) {
-            return a.Name;
-        });
-        var Race = NPCObject.map(function(a) {
+        }));
+        var Gender = uniq(NPCObject.map(function(a) {
+            return a.Gender;
+        }));
+        var Race = uniq(NPCObject.map(function(a) {
             return a.Race;
-        });
-        var Faction = NPCObject.map(function(a) {
+        }));
+        var Faction = uniq(NPCObject.map(function(a) {
             return a.FactionType;
-        });
+        }));
    /*     var Location = NPCObject.map(function(a) {
             return a.Location;
         }); */
@@ -87,6 +92,7 @@ function auto_grow(element) {
             option.value = item;
             FactionList.appendChild(option);
         });
+      console.log(Gender);
     /*    var LocationList = document.getElementById('LocationList');
         Location.forEach(function(item) {
             var option = document.createElement('option');

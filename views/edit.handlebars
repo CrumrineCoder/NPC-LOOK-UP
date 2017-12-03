@@ -4,18 +4,19 @@
    <head>
 
    </head>
-   <body>
+   <body ng-app="npc" ng-controller="npcController">
+     {[{NPC.Name}]}
       <h4 style="color: red;">
         The only information required is the name. All other fields are optional.
      </h4>
       <form method="post" action="/NPC/create"  name="npcCreationForm" id="createNPCFORM">
          <label required for="Name">[Required. Will be displayed on NPC listing]Enter the Character's Name:</label>
-         <input ng-model="Name" id="Name" name="Name" placeholder="Gandalf the Grey" required/> 
+         <input type = "text" ng-model="Name" id="Name" name="Name" value="Bob" required/> 
          <h2>
             Physical Description
          </h2>
          <label for="Gender">[Will be displayed on NPC listing] Enter the Character's Gender:</label>
-         <input id="Gender"  type="text" name="Gender" placeholder="Male" list="GenderList">
+         <input id="Gender"  type="text" name="Gender" value="Male" list="GenderList">
          <datalist id="GenderList"></datalist>
          <br>
          <label for="Race">[Will be displayed on NPC listing] Enter the Character's Race (human, elf, dwarf, etc.):</label>
@@ -134,7 +135,7 @@
       </form>
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
       <script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script type="text/javascript" src="/controllers/creatingNPCs.client.js"></script>
+      <script type="text/javascript" src="/controllers/editNPC.client.js"></script>
     
       <!-- <script type="text/javascript" src="/controllers/creatingPolls.js">
          </script> -->
