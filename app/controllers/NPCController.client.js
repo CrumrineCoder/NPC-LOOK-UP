@@ -1,6 +1,5 @@
 'use strict';
 (function() {
-  console.log("Controller"); 
     var app = angular.module('npc', []);
     app.config(function($interpolateProvider) {
         $interpolateProvider.startSymbol('{[{');
@@ -32,9 +31,34 @@
             xmlhttp.open(method, url, true);
             xmlhttp.send();
         }
+       var user;
+      function getUser(callback) {
+             ajaxRequest('GET', apiUrl + "users/user_data", function(data) {
+                 data = JSON.parse(data);
+                 if (data.hasOwnProperty('username')) {
+                     user = data.username;
+                 }
+                 callback();
+             });
+         }
+      getUser(function(){ready(ajaxRequest('GET', apiUrl + "api/listings", showNPCs))});
+function search(nameKey, myArray){
+  var newArr = [];
+    for (var i=0; i < myArray.length; i++) {
+        if (myArray[i].username === nameKey && nameKey != null) {
+            newArr.push(myArray[i]);
+        }
+    }
+  return newArr; 
+}
+
+
 
         function showNPCs(data) {
+        
             var NPCObject = JSON.parse(data);
+          var resultObject = search(user, NPCObject);
+            console.log(resultObject);
             for (var i = 0; i < NPCObject.length; i++) {
                 $scope.$apply(function() {
                     $scope.NPCs.push(NPCObject[i]);
@@ -42,6 +66,6 @@
             }
 
         }
-        ready(ajaxRequest('GET', apiUrl + "api/listings", showNPCs));
+       
     });
 })();

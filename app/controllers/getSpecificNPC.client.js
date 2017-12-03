@@ -32,7 +32,8 @@
             xmlhttp.open(method, url, true);
             xmlhttp.send();
         }
-
+     
+      
         function showNPCs(data) {
             var NPCObject = JSON.parse(data);
             /*   console.log(NPCObject[0]);

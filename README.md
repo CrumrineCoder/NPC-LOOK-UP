@@ -13,7 +13,7 @@ Plan:
 Create NPC:
 1.Make only the name required [DONE]
 2.Make a few questions fill themselves based on previous answers in the database and do large textareas etc for the rest [done]
-3. Include the user who created the NPC in the database
+3. Include the user who created the NPC in the database [done]
 3a. Verification a user is logged in when creating the NPC [done]
 
 Edit NPC:
