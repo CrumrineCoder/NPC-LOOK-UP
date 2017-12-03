@@ -65,10 +65,14 @@
                 });
             }
             if (resultObject.length > 0) {
-                var node = document.createElement("LI"); // Create a <li> node
-                var textnode = document.createTextNode("Water"); // Create a text node
-                node.appendChild(textnode);
-                document.getElementById(resultObject[0]._id).appendChild(node);
+              for(var i=0; i<resultObject.length; i++){
+                var link = document.createElement("a");
+                link.href = "edit/" + resultObject[i]._id;
+                var textnode = document.createTextNode("Edit");
+                link.appendChild(textnode);
+                document.getElementById(resultObject[i]._id).appendChild(link);
+              }
+
             }
         }
     });
