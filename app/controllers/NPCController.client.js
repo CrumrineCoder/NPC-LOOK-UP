@@ -34,10 +34,7 @@
         }
 
         function showNPCs(data) {
-            //console.log(data);
             var NPCObject = JSON.parse(data);
-
-            //console.log(NPCObject);
             for (var i = 0; i < NPCObject.length; i++) {
                 $scope.$apply(function() {
                     $scope.NPCs.push(NPCObject[i]);

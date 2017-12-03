@@ -25,7 +25,6 @@ function NPCHandler(db) {
             __v: 0
         } ).toArray(function(err, documents) {
             if (err) throw err
-          console.log(documents);
             res.json(documents);
         })  
     }

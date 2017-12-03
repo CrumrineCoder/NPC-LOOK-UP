@@ -37,7 +37,6 @@ var NPC = module.exports = mongoose.model('NPC', NPCSchema);
 }); */
  
 module.exports.createNPC = function(newNPC, callback) {
-      console.log(newNPC);
       newNPC.save(callback);
 
 }
