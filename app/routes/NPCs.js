@@ -25,7 +25,6 @@ router.get('/edit/:id', function(req, res) {
     res.render('edit');
 });
 router.post('/edit/', function(req, res) {
-  console.log(req.body);
      var newNPC = new NPC(req.body);
         NPC.replace(newNPC, function(err, NPC) {
             if (err) throw err;
