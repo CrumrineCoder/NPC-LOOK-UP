@@ -27,6 +27,8 @@ View NPC:
 3.Commenting ability
 4.Ability to report a comment or NPC for spam or offensive material
 5.Search functionality [done]
+5a. Tag search functionality 
+5b. Returns an organized list instead of just the JSON
 
 User Story 1: I can see all NPCs by compact and then expand to see the full page if I'm interested. 
   Users will be looking for the hook, the profession, the race, the gender, the age, the location, a quick insight into the personality, what type of faction they're in, and what their goals, beliefs, flaw and fears are.
