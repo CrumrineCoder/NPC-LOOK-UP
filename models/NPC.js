@@ -20,7 +20,7 @@ var NPCSchema = mongoose.Schema({
 NPCSchema.index({
     Background: 'text'
 });*/
-
+var ObjectId = require('mongodb').ObjectID;
 //console.log(npc.getIndexes());
 NPCSchema.index({"$**":"text"});
 //NPCSchema.createIndex({"Backstory":"text","Name":"text"})
@@ -28,6 +28,9 @@ npc.createIndex({"$**":"text"});
   
 var NPC = module.exports = mongoose.model('NPC', NPCSchema);
 
+module.exports.replace = function(newNPC, callback) {
+  npc.update({ "_id": ObjectId(newNPC._id) }, newNPC);
+}
 /*NPC.on('index', function(err) {
     if (err) {
         console.error('User index error: %s', err);
