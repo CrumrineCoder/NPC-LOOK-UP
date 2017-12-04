@@ -1,103 +1,96 @@
 <!DOCTYPE html>
-<h2 class="page-header">Create NPC</h2>
 <html>
    <head>
 
    </head>
    <body ng-app="npc" ng-controller="npcController">
-     {[{NPC.Name}]}
-      <h4 style="color: red;">
-        The only information required is the name. All other fields are optional.
-     </h4>
+
       <form method="post" action="/NPC/create"  name="npcCreationForm" id="createNPCFORM">
-         <label required for="Name">[Required. Will be displayed on NPC listing]Enter the Character's Name:</label>
-         <input type = "text" ng-model="Name" id="Name" name="Name" value="Bob" required/> 
          <h2>
+           Edit {[{NPC.Name}]}'s entry
+        </h2>
+         <h3>
             Physical Description
-         </h2>
+         </h3>
          <label for="Gender">[Will be displayed on NPC listing] Enter the Character's Gender:</label>
-         <input id="Gender"  type="text" name="Gender" value="Male" list="GenderList">
+         <input id="Gender"  type="text" name="Gender" value={[{NPC.Gender}]} list="GenderList">
          <datalist id="GenderList"></datalist>
          <br>
          <label for="Race">[Will be displayed on NPC listing] Enter the Character's Race (human, elf, dwarf, etc.):</label>
-         <input id="Race" type="text" name="Race" placeholder="Istari" list="RaceList">
+         <input id="Race" type="text" name="Race" value={[{NPC.Race}]}  list="RaceList">
           <datalist id="RaceList"></datalist>
          <br>
          <label for="Profession">[Will be displayed on NPC listing] Enter the Character's Profession or Class:</label>
-         <input id="Profession" type="text" name="Profession" placeholder="Wizard" list="ProfessionList">
+         <input id="Profession" type="text" name="Profession" value={[{NPC.Profession}]}  list="ProfessionList">
          <datalist id="ProfessionList"></datalist>
          <br>
          <label for="Age" >[Will be displayed on NPC listing] Enter the Character's Age:</label>
-         <input id="Age" type="text" name="Age" placeholder="2019" list="AgeList"> 
+         <input id="Age" type="text" name="Age" value={[{NPC.Age}]}  list="AgeList"> 
         <datalist id="AgeList"></datalist>
          <br>
          <br>
          <label for="PDesc">Enter the Character's Physical Description:</label>
-         <textarea onkeyup="auto_grow(this)" id="PDesc" type="text" name="PDesc" placeholder="He wore a tall pointed grey hat, a long grey cloak, and a silver scarf. He had a long white beard and bushy eyebrows that stuck out beyond the brim of his hat"></textarea>
+         <textarea onkeyup="auto_grow(this)" id="PDesc" type="text" name="PDesc" >{[{NPC.PDesc}]}</textarea>
          <br>
-         <h2>
+         <h3>
             Mental Description and Plot Hooks
-         </h2>
+         </h3>
          <label for="Location">[Will be displayed on NPC listing] Enter the Character's working location and activity:</label>
-         <input id="Location" type="text" name="Location" placeholder="Gandalf is wandering in Elf Territory learning from them" list="LocationList">
+         <input id="Location" type="text" name="Location" value={[{NPC.Location}]}  list="LocationList">
          <datalist id="LocationList"></datalist>
          <br>
         <label for="Downtime"> Enter the Character's downtime location and activity:</label>
-         <input id="Downtime" type="text" name="Downtime" placeholder="Selling fireworks to Minors in the Shire">
+         <input id="Downtime" type="text" name="Downtime" value={[{NPC.Downtime}]} >
          <br>
          <label for="Drive">Enter the Character's Drives:</label>
-         <textarea onkeyup="auto_grow(this)" id="Drive" type="text" name="Drive" placeholder="The Drives of a character are the character's goals, fears, core beliefs, and what they value."></textarea>
+         <textarea onkeyup="auto_grow(this)" id="Drive" type="text" name="Drive" placeholder="The Drives of a character are the character's goals, fears, core beliefs, and what they value.">{[{NPC.Drive}]}</textarea>
          <br>
          <label for="Hook">Enter potential plot hooks:</label>
-         <textarea onkeyup="auto_grow(this)" id="Hook" type="text" name="Hook" placeholder="Gandalf is looking for adventurers to journey with him to kill Smaug"></textarea>
+         <textarea onkeyup="auto_grow(this)" id="Hook" type="text" name="Hook">{[{NPC.Hook}]} </textarea>
          <br>
          <label for="Backstory">Enter the Character's Backstory:</label>
-         <textarea onkeyup="auto_grow(this)" id="Backstory" type="text" name="Backstory" placeholder="Gandalf was one of the five Istari sent to Middle-earth by the Valar in the Third Age. In Valinor he was known as Olórin."></textarea>
+         <textarea onkeyup="auto_grow(this)" id="Backstory" type="text" name="Backstory" >{[{NPC.Backstory}]}</textarea>
          <br>
-         <h2>
+         <h3>
             Personality
-         </h2>
+         </h3>
          <label for="persBrief">[Will be displayed on NPC listing] Enter the Character's Personality IN ONE WORD:</label>
-         <input  maxlength="20" id="persBrief" type="text" name="persBrief" placeholder="Quick-tempered">
+         <input  maxlength="20" id="persBrief" type="text" name="persBrief" value={[{NPC.persBrief}]} >
          <br>
          <label for="Personality">Enter the Character's Personality:</label>
-         <textarea onkeyup="auto_grow(this)" id="Personality" type="text" name="Personality" placeholder="Keen observers of Gandalf often detected a veiled power, usually revealed in his eyes, which appeared deep and wise. He was alternately affectionate and brusque; he often surprised others with his bluntness when time was of the essence. Gandalf consistently upbraided foolish behaviour, but also richly rewarded those who acted with good intentions."></textarea>
+         <textarea onkeyup="auto_grow(this)" id="Personality" type="text" name="Personality">{[{NPC.Personality}]} </textarea>
          <br>
          <label for="Speech">Enter the Character's Speech Patterns, Mannerisms, quotes & sayings:</label>
-         <textarea onkeyup="auto_grow(this)" id="Speech" type="text" name="Speech" placeholder="Gandalf speaks bluntly and does not mince his words, but yet often manages to spea poetically simply because of how much he's seen in his time. 'I will not say: do not weep; for not all tears are an evil' "></textarea>
+         <textarea onkeyup="auto_grow(this)" id="Speech" type="text" name="Speech" >{[{NPC.Speech}]}</textarea>
          <br>
-         <h2>
+         <h3>
             Affiliations
-         </h2>
+         </h3>
          <label for="NPCs">Enter other NPCs the Character knows and their relationship:</label>
-         <textarea onkeyup="auto_grow(this)"  id="NPCs" type="text" name="NPCs" placeholder="Bilbo Baggins is a Hobbit friend of Gandalf who is travelling with him."></textarea>
+         <textarea onkeyup="auto_grow(this)"  id="NPCs" type="text" name="NPCs" >{[{NPC.NPCs}]}</textarea>
          <br>
          <label for="FactionType">[Will be displayed on NPC listing] Enter the Character's Faction Type</label>
-         <input  maxlength="30" id="FactionType" type="text" name="FactionType" placeholder="Guardian Deities" list="FactionList">
+         <input  maxlength="30" id="FactionType" type="text" name="FactionType" value={[{NPC.FactionType}]}  list="FactionList">
          <datalist id="FactionList"></datalist>
          <br>
          <label for="FactionDesc">Enter the Character's Faction Description:</label>
-         <textarea id="FactionDesc" type="text" name="FactionDesc" placeholder="The Wizards, initially known as the Istari, were five Maiar spirits sent to Middle-earth as human forms to aid the Free Peoples against the threat of Sauron."></textarea>
+         <textarea id="FactionDesc" type="text" name="FactionDesc"  >{[{NPC.FactionDesc}]}</textarea>
          <br>
-         <h2>
+         <h3>
             Mechanics
-         </h2>
+         </h3>
          <label for="Stats">Enter the Character's Notable Stats:</label>
-         <textarea onkeyup="auto_grow(this)"  id="Stats" type="text" name="Stats" placeholder="Gandalf is a fighter with 18 INT with high proficiency in Use Magic Device"></textarea>
+         <textarea onkeyup="auto_grow(this)"  id="Stats" type="text" name="Stats" > {[{NPC.Stats}]}</textarea>
          <br>
          <label for="Items">Enter the Character's Notable Items:</label>
-         <textarea onkeyup="auto_grow(this)"  id="Items" type="text" name="Items" placeholder="Staff of Wizardry, Ring of Spell Storing"></textarea>
+         <textarea onkeyup="auto_grow(this)"  id="Items" type="text" name="Items"  >{[{NPC.Items}]}</textarea>
          <br>
-         <h2>
+         <h3>
            Other
-        </h2>
-        <br>
+        </h3>
         <label for="Other">Enter other notes that don't fit in any other category:</label>
-         <textarea onkeyup="auto_grow(this)"  id="Other" type="text" name="Other" placeholder="The party loved him, but I had to remove him for some fights to avoid an issue where the NPC was clearly stronger than the party, which isn't the intent of my campaign. I had him save the party when they were captured by Trolls, but because they had built a friendship with him they didn't seem to mind that I did this."></textarea>
-
-        
-        
-         <button type="submit"  style="margin-top: 10px;" value="Send order" ng-disabled="npcCreationForm.$invalid">Submit</button>
+         <textarea onkeyup="auto_grow(this)"  id="Other" type="text" name="Other" >{[{NPC.Other}]} </textarea>   
+         <button type="submit"  style="margin-top: 10px;" value="Send order">Save Changes</button>
          <!--
             <div id="right">
                <h4> Options </h4>

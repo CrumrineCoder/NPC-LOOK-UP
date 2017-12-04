@@ -11,9 +11,9 @@
       <form method="post" action="/NPC/create"  name="npcCreationForm" id="createNPCFORM">
          <label required for="Name">[Required. Will be displayed on NPC listing]Enter the Character's Name:</label>
          <input ng-model="Name" id="Name" name="Name" placeholder="Gandalf the Grey" required/> 
-         <h2>
+         <h3>
             Physical Description
-         </h2>
+         </h3>
          <label for="Gender">[Will be displayed on NPC listing] Enter the Character's Gender:</label>
          <input id="Gender"  type="text" name="Gender" placeholder="Male" list="GenderList">
          <datalist id="GenderList"></datalist>
@@ -34,9 +34,9 @@
          <label for="PDesc">Enter the Character's Physical Description:</label>
          <textarea onkeyup="auto_grow(this)" id="PDesc" type="text" name="PDesc" placeholder="He wore a tall pointed grey hat, a long grey cloak, and a silver scarf. He had a long white beard and bushy eyebrows that stuck out beyond the brim of his hat"></textarea>
          <br>
-         <h2>
+         <h3>
             Mental Description and Plot Hooks
-         </h2>
+         </h3>
          <label for="Location">[Will be displayed on NPC listing] Enter the Character's working location and activity:</label>
          <input id="Location" type="text" name="Location" placeholder="Gandalf is wandering in Elf Territory learning from them" list="LocationList">
          <datalist id="LocationList"></datalist>
@@ -53,9 +53,9 @@
          <label for="Backstory">Enter the Character's Backstory:</label>
          <textarea onkeyup="auto_grow(this)" id="Backstory" type="text" name="Backstory" placeholder="Gandalf was one of the five Istari sent to Middle-earth by the Valar in the Third Age. In Valinor he was known as Olórin."></textarea>
          <br>
-         <h2>
+         <h3>
             Personality
-         </h2>
+         </h3>
          <label for="persBrief">[Will be displayed on NPC listing] Enter the Character's Personality IN ONE WORD:</label>
          <input  maxlength="20" id="persBrief" type="text" name="persBrief" placeholder="Quick-tempered">
          <br>
@@ -65,9 +65,9 @@
          <label for="Speech">Enter the Character's Speech Patterns, Mannerisms, quotes & sayings:</label>
          <textarea onkeyup="auto_grow(this)" id="Speech" type="text" name="Speech" placeholder="Gandalf speaks bluntly and does not mince his words, but yet often manages to spea poetically simply because of how much he's seen in his time. 'I will not say: do not weep; for not all tears are an evil' "></textarea>
          <br>
-         <h2>
+         <h3>
             Affiliations
-         </h2>
+         </h3>
          <label for="NPCs">Enter other NPCs the Character knows and their relationship:</label>
          <textarea onkeyup="auto_grow(this)"  id="NPCs" type="text" name="NPCs" placeholder="Bilbo Baggins is a Hobbit friend of Gandalf who is travelling with him."></textarea>
          <br>
@@ -78,19 +78,18 @@
          <label for="FactionDesc">Enter the Character's Faction Description:</label>
          <textarea id="FactionDesc" type="text" name="FactionDesc" placeholder="The Wizards, initially known as the Istari, were five Maiar spirits sent to Middle-earth as human forms to aid the Free Peoples against the threat of Sauron."></textarea>
          <br>
-         <h2>
+         <h3>
             Mechanics
-         </h2>
+         </h3>
          <label for="Stats">Enter the Character's Notable Stats:</label>
          <textarea onkeyup="auto_grow(this)"  id="Stats" type="text" name="Stats" placeholder="Gandalf is a fighter with 18 INT with high proficiency in Use Magic Device"></textarea>
          <br>
          <label for="Items">Enter the Character's Notable Items:</label>
          <textarea onkeyup="auto_grow(this)"  id="Items" type="text" name="Items" placeholder="Staff of Wizardry, Ring of Spell Storing"></textarea>
          <br>
-         <h2>
+         <h3>
            Other
-        </h2>
-        <br>
+        </h3>
         <label for="Other">Enter other notes that don't fit in any other category:</label>
          <textarea onkeyup="auto_grow(this)"  id="Other" type="text" name="Other" placeholder="The party loved him, but I had to remove him for some fights to avoid an issue where the NPC was clearly stronger than the party, which isn't the intent of my campaign. I had him save the party when they were captured by Trolls, but because they had built a friendship with him they didn't seem to mind that I did this."></textarea>
 
