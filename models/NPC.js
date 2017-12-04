@@ -29,7 +29,7 @@ npc.createIndex({"$**":"text"});
 var NPC = module.exports = mongoose.model('NPC', NPCSchema);
 
 module.exports.replace = function(newNPC, callback) {
-  npc.update({ "_id": ObjectId(newNPC._id) }, newNPC);
+  npc.update({_id: ObjectId(newNPC._id) }, newNPC);
 }
 /*NPC.on('index', function(err) {
     if (err) {
