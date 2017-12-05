@@ -71,6 +71,14 @@
                 var textnode = document.createTextNode("Edit");
                 link.appendChild(textnode);
                 document.getElementById(resultObject[i]._id).appendChild(link);
+                var br = document.createElement("br");
+                document.getElementById(resultObject[i]._id).appendChild(br);
+                 var link = document.createElement("a");
+                link.href = "delete/" + resultObject[i]._id;
+                var textnode = document.createTextNode("Delete");
+                link.appendChild(textnode);
+                link.onclick = function (){return confirm('Are you sure?')};
+                document.getElementById(resultObject[i]._id).appendChild(link);
               }
 
             }
