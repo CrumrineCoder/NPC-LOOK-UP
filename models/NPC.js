@@ -31,6 +31,10 @@ var NPC = module.exports = mongoose.model('NPC', NPCSchema);
 module.exports.replace = function(newNPC, callback) {
   npc.update({_id: ObjectId(newNPC._id) }, newNPC);
 }
+
+module.exports.delete = function(newNPC, callback){
+  npc.remove( { _id: ObjectId(newNPC._id) });
+}
 /*NPC.on('index', function(err) {
     if (err) {
         console.error('User index error: %s', err);

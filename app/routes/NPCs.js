@@ -32,6 +32,14 @@ router.post('/edit/', function(req, res) {
       req.flash('success_msg', 'Saves changed.');
         res.redirect('/');
 });
+router.post('/delete/', function(req, res) {
+     var newNPC = new NPC(req.body);
+        NPC.delete(newNPC, function(err, NPC) {
+            if (err) throw err;
+        }); 
+      req.flash('success_msg', 'NPC deleted; you monster.');
+        res.redirect('/'); 
+});
 router.post('/create', function(req, res) {
     req.checkBody('Name', 'Name is required').notEmpty();
     var errors = req.validationErrors();

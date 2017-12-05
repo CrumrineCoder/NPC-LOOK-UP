@@ -71,9 +71,31 @@
                 var textnode = document.createTextNode("Edit");
                 link.appendChild(textnode);
                 document.getElementById(resultObject[i]._id).appendChild(link);
+                var form = document.createElement("form");
+                form.setAttribute('method',"post");
+                form.setAttribute('action',"/NPC/delete");
+                var input = document.createElement("input");
+                input.type = "hidden";
+                input.name = "_id";
+                input.value = NPCObject[i]._id;
+                var button = document.createElement("button");
+                button.type = "submit";
+                button.className="confirmation";
+                var textNode = document.createTextNode("Delete");
+                button.appendChild(textNode);
+                form.appendChild(input);
+                form.appendChild(button);
+                document.getElementById(resultObject[i]._id).appendChild(form);
               }
-
+  var elems = document.getElementsByClassName('confirmation');
+    var confirmIt = function (e) {
+        if (!confirm('Are you sure?')) e.preventDefault();
+    };
+    for (var i = 0, l = elems.length; i < l; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
+    }
             }
+
         }
     });
 })();

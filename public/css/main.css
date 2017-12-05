@@ -56,3 +56,10 @@ hr{
 .bold{
   font-weight: bold; 
 }
+
+
+/* Delete */
+.inline {
+  display: inline;
+}
+
