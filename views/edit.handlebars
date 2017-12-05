@@ -129,6 +129,12 @@
             </div>
             -->
       </form>
+     <form method="post" action="/NPC/delete">
+       <input type="hidden" name="_id" value={[{NPC._id}]}>
+        <button type="submit" class="confirmation">
+        Delete
+  </button>
+     </form>
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
       <script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script type="text/javascript" src="/controllers/editNPC.client.js"></script>

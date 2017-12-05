@@ -92,7 +92,6 @@ function uniq(a) {
             option.value = item;
             FactionList.appendChild(option);
         });
-      console.log(Gender);
     /*    var LocationList = document.getElementById('LocationList');
         Location.forEach(function(item) {
             var option = document.createElement('option');
