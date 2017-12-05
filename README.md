@@ -18,7 +18,8 @@ Create NPC:
 Edit NPC:
 1.The ability to even do so [Done]
 2.User verification [Done]
-3.Delete a NPC
+3.Delete a NPC [done]
+4. Dashboard list of all NPCs one has created
 
 View NPC:
 1.Correct formatting [done]
@@ -30,6 +31,7 @@ View NPC:
 5b. Returns an organized list instead of just the JSON
 
 CSS
+Edit and Delete buttons
 
 User Story 1: I can see all NPCs by compact and then expand to see the full page if I'm interested. 
   Users will be looking for the hook, the profession, the race, the gender, the age, the location, a quick insight into the personality, what type of faction they're in, and what their goals, beliefs, flaw and fears are.
