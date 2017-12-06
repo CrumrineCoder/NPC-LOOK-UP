@@ -59,12 +59,14 @@
         function showNPCs(data) {
             var NPCObject = JSON.parse(data);
             var resultObject = search(user, NPCObject);
-            for (var i = 0; i < NPCObject.length; i++) {
-                if(user == NPCObject[i].username){
+            console.log(NPCObject);
+            console.log(resultObject);
+            for (var i = 0; i < resultObject.length; i++) {
+
                   $scope.$apply(function() {
-                      $scope.NPCs.push(NPCObject[i]);
+                      $scope.NPCs.push(resultObject[i]);
                   });
-                }
+                
             }
             if (resultObject.length > 0) {
                 for (var i = 0; i < resultObject.length; i++) {
@@ -74,7 +76,7 @@
                     var input = document.createElement("input");
                     input.type = "hidden";
                     input.name = "_id";
-                    input.value = NPCObject[i]._id;
+                    input.value = resultObject[i]._id;
                     var button = document.createElement("button");
                     button.type = "submit";
                     button.className = "confirmation";

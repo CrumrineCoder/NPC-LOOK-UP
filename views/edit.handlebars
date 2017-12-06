@@ -6,12 +6,12 @@
    <body ng-app="npc" ng-controller="npcController">
 
       <form method="post" action="/NPC/edit"  name="npcCreationForm" id="createNPCFORM">
-         <h2>
-           Edit {[{NPC.Name}]}'s entry
-        </h2>
-        <input type="text" value={[{NPC.Name}]} name="Name" readonly="readonly" class="hidden" />
+  
         <input type="text" value={[{NPC._id}]} name="_id" readonly="readonly" class="hidden" />
         <input type="text" value={[{NPC.username}]} name="username" readonly="readonly" class="hidden" />
+        
+         <label for="Name">[Will be displayed on NPC listing] Enter the Character's Name:</label>
+        <input id="Name" type="text" value={[{NPC.Name}]} name="Name"/>
          <h3>
             Physical Description
          </h3>

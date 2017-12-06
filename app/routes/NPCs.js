@@ -37,6 +37,7 @@ router.post('/edit/', function(req, res) {
         res.redirect('/');
 });
 router.post('/delete/', function(req, res) {
+    console.log(req.body);
      var newNPC = new NPC(req.body);
         NPC.delete(newNPC, function(err, NPC) {
             if (err) throw err;
