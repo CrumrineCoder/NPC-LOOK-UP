@@ -33,6 +33,7 @@ module.exports.replace = function(newNPC, callback) {
 }
 
 module.exports.delete = function(newNPC, callback){
+  console.log(newNPC);
   npc.remove( { _id: ObjectId(newNPC._id) });
 }
 /*NPC.on('index', function(err) {
