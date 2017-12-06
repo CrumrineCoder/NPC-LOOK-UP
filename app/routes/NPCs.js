@@ -24,6 +24,10 @@ router.get('/view/:id', function(req, res) {
 router.get('/edit/:id', function(req, res) {
     res.render('edit');
 });
+router.get('/profile/', function (req,res){
+   res.render('profile');
+});
+
 router.post('/edit/', function(req, res) {
      var newNPC = new NPC(req.body);
         NPC.replace(newNPC, function(err, NPC) {
