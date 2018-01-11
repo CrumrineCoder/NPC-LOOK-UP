@@ -8,11 +8,9 @@ Search formatting
 Plan: 
 
 Commenting ability
-Delete
 Ability to report a comment or NPC for spam or offensive material
 Search functionality [done]
 
-  Tag search functionality   
   
   Returns an organized list instead of just the JSON
   

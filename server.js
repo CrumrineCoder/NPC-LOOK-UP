@@ -22,7 +22,7 @@ mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.NAME, {
 var db = mongoose.connection;
 //var polls = require('./app/routes/polls.js');
 var users = require('./app/routes/users.js');
-var NPC = require('./app/routes/NPCs.js');
+var NPC = require('./app/routes/npcs.js');
 var express = require('express'),
     routes = require('./app/routes/index.js'),
     mongodb = require('mongodb');
