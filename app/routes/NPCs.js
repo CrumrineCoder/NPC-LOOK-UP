@@ -67,8 +67,7 @@ router.get('/NPClisting', function(req, res) {
 });
 
 router.post('/search/', function(req, res) {
-    console.log("Trouble");
-    res.render(process.cwd() + '/views/NPCListing.handlebars');
+    res.render(process.cwd() + '/views/NPClisting.handlebars');
 });
 
 /*router.get('/view', function(req, res) {
