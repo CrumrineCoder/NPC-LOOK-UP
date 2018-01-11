@@ -2,17 +2,13 @@
 
 A website for looking up NPCs for use in tabletop games. 
 
-Tag System for searching
-Delete NPCs
 Commenting on NPCs; reporting NPCs or comments.
 Search formatting
 
 Plan: 
 
-Dashboard list of all NPCs one has created
-
 Commenting ability
-
+Delete
 Ability to report a comment or NPC for spam or offensive material
 Search functionality [done]
 
