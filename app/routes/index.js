@@ -13,5 +13,5 @@ module.exports = function (app, db) {
   app.route('/api/NPC/?')
       .get(npcHandler.getOneNPC)
   app.route('/api/search/')
-     .post(npcHandler.Search)
+     .get(npcHandler.Search)
 };
