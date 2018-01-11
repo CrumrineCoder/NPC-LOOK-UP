@@ -3,7 +3,7 @@ var router = express.Router();
 // This file handles routing relation to making and viewing polls
 //var passport = require('passport');
 //var LocalStrategy = require('passport-local').Strategy;
-var NPC = require(process.cwd() + '/models/npc');
+var NPC = require(process.cwd() + '/models/NPC');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.NAME, {
     useMongoClient: true

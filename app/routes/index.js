@@ -10,9 +10,8 @@ module.exports = function (app, db) {
       });
   app.route('/api/listings')
       .get(npcHandler.getAllNPCs)
-  app.route('/api/npc/?')
+  app.route('/api/NPC/?')
       .get(npcHandler.getOneNPC)
-  app.route('/api/search/?')
-      .get(npcHandler.Search)
+  app.route('/api/search/')
+     .post(npcHandler.Search)
 };
-  
