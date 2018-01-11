@@ -3,7 +3,7 @@ var router = express.Router();
 // This file handles routing relation to making and viewing polls
 //var passport = require('passport');
 //var LocalStrategy = require('passport-local').Strategy;
-var NPC = require(process.cwd() + '/models/NPC');
+var NPC = require(process.cwd() + '/models/npc');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.NAME, {
     useMongoClient: true
@@ -67,6 +67,7 @@ router.get('/NPClisting', function(req, res) {
 });
 
 router.post('/search/', function(req, res) {
+    console.log("Trouble");
     res.render(process.cwd() + '/views/NPCListing.handlebars');
 });
 
