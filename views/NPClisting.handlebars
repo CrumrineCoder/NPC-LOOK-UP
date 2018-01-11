@@ -5,13 +5,8 @@
 </head>
 
 <body ng-app="npc" ng-controller="npcController">
-<form action="/NPC/search/" method="post">
-    <label for="npcName">Enter name: </label>
-    <input id="npcName" type="text" name="npcName" placeholder="NPC Name">
-    <input type="submit" value="OK">
-</form>
-  
-  <!--     <form method="post" action="/polls/search/" class="navbar-center" >
+    <form action="/NPC/search/" method="post"> <label for="npcName">Enter name: </label> <input id="npcName" type="text" name="npcName" placeholder="NPC Name"> <input type="submit" value="Search"> </form>
+    <!--     <form method="post" action="/polls/search/" class="navbar-center" >
                      <span class="col">
                         <input style="font-size: 16px;" name="searchTerm" type="search" id="findPolls"  placeholder="Search for polls" value ="">
                     </span>
@@ -22,14 +17,13 @@
                      </form>   -->
     <div id="NPCContainer">
         <div ng-repeat="NPC in NPCs" class="NPCContainer">
-          <div id="{[{NPC._id}]}">
-            <a ng-href="view/{[{NPC._id}]}" >
-                <h3> {[{NPC.Name}]} </h3>
-            </a>
-          </div>
-            
-              <span class="bold">Hooks:</span> <p>{[{NPC.Hook}]} </p>
-        <span class="bold">Drives:</span> <p> {[{NPC.Drive}]} </p>
+            <div id="{[{NPC._id}]}">
+                <a ng-href="view/{[{NPC._id}]}">
+                    <h3> {[{NPC.Name}]} </h3>
+                </a>
+            </div> <span class="bold">Hooks:</span>
+            <p>{[{NPC.Hook}]} </p> <span class="bold">Drives:</span>
+            <p> {[{NPC.Drive}]} </p>
             <hr align="middle" width="50%">
             <table class="PhysicalDescription">
                 <tr>

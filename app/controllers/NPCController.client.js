@@ -42,6 +42,7 @@
                 callback();
             });
         }
+      
         getUser(function() {
             ready(ajaxRequest('GET', apiUrl + "api/listings", showNPCs))
         });
