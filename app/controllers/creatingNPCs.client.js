@@ -14,34 +14,13 @@ function auto_grow(element) {
             $scope.NPCs = []; */
     var apiUrl = 'https://npclookup.glitch.me/';
 
-    function ready(fn) {
-        // Will do the function once the document is ready
-        if (typeof fn !== 'function') {
-            return;
-        }
-        if (document.readyState === 'complete') {
-            return fn();
-        }
-        document.addEventListener('DOMContentLoaded', fn, false);
+    function uniq(a) {
+        var seen = {};
+        return a.filter(function(item) {
+            return seen.hasOwnProperty(item) ? false : (seen[item] = true);
+        });
     }
 
-    function ajaxRequest(method, url, callback) {
-        var xmlhttp = new XMLHttpRequest();
-        // Everytime the readystage changes, we're checking if it's done, and if so this function will do the callback
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-                callback(xmlhttp.response);
-            }
-        };
-        xmlhttp.open(method, url, true);
-        xmlhttp.send();
-    }
-function uniq(a) {
-    var seen = {};
-    return a.filter(function(item) {
-        return seen.hasOwnProperty(item) ? false : (seen[item] = true);
-    });
-}
     function showNPCs(data) {
         var NPCObject = JSON.parse(data);
         var Age = uniq(NPCObject.map(function(a) {
@@ -59,9 +38,9 @@ function uniq(a) {
         var Faction = uniq(NPCObject.map(function(a) {
             return a.FactionType;
         }));
-   /*     var Location = NPCObject.map(function(a) {
-            return a.Location;
-        }); */
+        /*     var Location = NPCObject.map(function(a) {
+                 return a.Location;
+             }); */
         var AgeList = document.getElementById('AgeList');
         Age.forEach(function(item) {
             var option = document.createElement('option');
@@ -92,12 +71,12 @@ function uniq(a) {
             option.value = item;
             FactionList.appendChild(option);
         });
-    /*    var LocationList = document.getElementById('LocationList');
-        Location.forEach(function(item) {
-            var option = document.createElement('option');
-            option.value = item;
-            LocationList.appendChild(option);
-        }); */
+        /*    var LocationList = document.getElementById('LocationList');
+            Location.forEach(function(item) {
+                var option = document.createElement('option');
+                option.value = item;
+                LocationList.appendChild(option);
+            }); */
     }
     ready(ajaxRequest('GET', apiUrl + "api/listings", showNPCs));
 })();

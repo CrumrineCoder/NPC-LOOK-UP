@@ -5,7 +5,11 @@
 </head>
 
 <body ng-app="npc" ng-controller="npcController">
-    <form action="/NPC/search/" method="post"> <label for="npcName">Enter name: </label> <input id="npcName" type="text" name="npcName" placeholder="NPC Name"> <input type="submit" value="Search"> </form>
+    <form action="/NPC/search?=" method="post"> 
+      <label for="npcName">Enter name: </label>
+      <input id="npcName" type="text" name="npcName" placeholder="NPC Name"> 
+      <input type="submit" value="Search"> 
+    </form>
     <!--     <form method="post" action="/polls/search/" class="navbar-center" >
                      <span class="col">
                         <input style="font-size: 16px;" name="searchTerm" type="search" id="findPolls"  placeholder="Search for polls" value ="">
@@ -56,7 +60,8 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/controllers/NPCController.client.js"></script>
+  <script type="text/javascript" src="/controllers/ajaxRequest.js"></script>  
+  <script type="text/javascript" src="/controllers/NPCController.client.js"></script>
 </body>
 
 </html>
