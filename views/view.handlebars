@@ -8,17 +8,13 @@
 
 <body ng-app="npc" ng-controller="npcController">
     <div id="NPCContainer">
-        <h3> {[{NPC.Name}]} </h3>
-         <span class="bold">Hooks:</span> <p>{[{NPC.Hook}]} </p>
-        <span class="bold">Drives:</span> <p> {[{NPC.Drive}]} </p>
-        
-      
-   
-         <span class="bold">Physical Description:</span> <p> {[{NPC.PDesc}]} </p>
-      
-       <span class="bold">Backstory:</span> <p> {[{NPC.Backstory}]} </p>
-        <span class="bold">Personality:</span><p> {[{NPC.Personality}]} </p>
-         <span class="bold">Speech Patterns:</span><p>{[{NPC.Speech}]} </p>
+        <h3> {[{NPC.Name}]} </h3> <span class="bold">Hooks:</span>
+        <p>{[{NPC.Hook}]} </p> <span class="bold">Drives:</span>
+        <p> {[{NPC.Drive}]} </p> <span class="bold">Physical Description:</span>
+        <p> {[{NPC.PDesc}]} </p> <span class="bold">Backstory:</span>
+        <p> {[{NPC.Backstory}]} </p> <span class="bold">Personality:</span>
+        <p> {[{NPC.Personality}]} </p> <span class="bold">Speech Patterns:</span>
+        <p>{[{NPC.Speech}]} </p>
         <table class="PhysicalDescription">
             <tr>
                 <th>Profession</th>
@@ -43,16 +39,15 @@
                 <td> {[{NPC.Downtime}]} </td>
             </tr>
         </table>
-      <table>
+        <table>
             <tr>
                 <th> Affiliated NPCs </th>
                 <th> Affiliated Faction </th>
             </tr>
             <tr>
                 <td> {[{NPC.NPCs}]} </td>
-                <td> <p class="bold">
-                  {[{NPC.FactionType}]}
-                  </p> {[{NPC.FactionDesc}]} </td>
+                <td>
+                    <p class="bold"> {[{NPC.FactionType}]} </p> {[{NPC.FactionDesc}]} </td>
             </tr>
         </table>
         <table>
@@ -64,13 +59,12 @@
                 <td> {[{NPC.Stats}]} </td>
                 <td> {[{NPC.Items}]} </td>
             </tr>
-        </table>
-      <p>
-         <span class="bold">Misc Notes:</span> <p>{[{NPC.Other}]} </p>
-      </p>
+        </table> <br /> <span class="bold">Misc Notes:</span>
+        <p>{[{NPC.Other}]} </p>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/controllers/ajaxRequest.js"></script>
     <script type="text/javascript" src="/controllers/getSpecificNPC.client.js"></script>
 </body>
 
