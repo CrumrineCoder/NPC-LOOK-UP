@@ -62,11 +62,11 @@ router.post('/create', function(req, res) {
         res.redirect('/');
     }
 });
-router.get('/NPClisting', function(req, res) {
+router.get('/?', function(req, res) {
     res.render('NPClisting');
 });
 
-router.post('/search/', function(req, res) {
+router.post('/?', function(req, res) {
     res.render(process.cwd() + '/views/NPClisting.handlebars');
 });
 
