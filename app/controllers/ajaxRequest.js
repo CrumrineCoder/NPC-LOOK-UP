@@ -1,4 +1,4 @@
-console.log("HEY");
+
 
 function ready(fn) {
     // Will do the function once the document is ready
