@@ -63,6 +63,36 @@ router.post('/create', function(req, res) {
     }
 });
 
+// Post a comment
+router.post('/comment', function(req, res) {
+  function guidGenerator() {
+    var S4 = function() {
+       return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+    };
+    return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+}
+   console.log("Dingus");
+  console.log(req.body); 
+    var comment = req.body.comment;  
+    var commentID = guidGenerator();
+    console.log(commentID);
+  
+      var newUser = new User({
+            name: name,
+            email: email,
+            username: username,
+            password: password
+        });
+        User.createUser(newUser, function(err, user) {
+            if (err) throw err;
+        });
+
+        req.flash('success_msg', 'You are registered and can now login');
+
+        res.redirect('/users/login');
+    
+});
+
 router.get("/listing", function(req,res){
    res.render('NPClisting');
 });
