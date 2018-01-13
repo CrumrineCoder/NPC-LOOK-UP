@@ -61,7 +61,23 @@
             </tr>
         </table> <br /> <span class="bold">Misc Notes:</span>
         <p>{[{NPC.Other}]} </p>
+  
+    {[{comments.length}]} thoughts on {[{NPC.Name}]}
+    <div ng-repeat="comment in comments">
+     <p>
+       
+      </p>    
     </div>
+        </div>
+    <H3>
+     Leave a Reply
+  </H3> 
+    <form action="/NPC/comment" method="post" id="commentform">
+        <label for="comment" class="required">Your message</label>
+        <textarea name="comment" id="comment" rows="10" tabindex="4"  required="required"></textarea>
+        <input type="hidden" name="comment_post_ID" value="1" id="comment_post_ID" />
+    <input name="submit" type="submit" value="Submit comment" />
+    </form>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="/controllers/ajaxRequest.js"></script>

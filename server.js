@@ -20,7 +20,6 @@ mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.NAME, {
     useMongoClient: true
 });
 var db = mongoose.connection;
-//var polls = require('./app/routes/polls.js');
 var users = require('./app/routes/users.js');
 var NPC = require('./app/routes/NPCs.js');
 var express = require('express'),

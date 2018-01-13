@@ -1,12 +1,12 @@
 (function() {
     var path = window.location.pathname;
     var page = path.split("/").pop();
-    var app = angular.module('npc', []);
-    app.config(function($interpolateProvider) {
+    var angularApp = angular.module('npc', []);
+    angularApp.config(function($interpolateProvider) {
         $interpolateProvider.startSymbol('{[{');
         $interpolateProvider.endSymbol('}]}');
     });
-    app.controller('npcController', function($scope) {
+    angularApp.controller('npcController', function($scope) {
         $scope.NPC = [];
         var apiUrl = 'https://npclookup.glitch.me/';
 
