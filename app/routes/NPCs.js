@@ -62,12 +62,8 @@ router.post('/create', function(req, res) {
         res.redirect('/');
     }
 });
-router.get('/?/', function(req, res) {
-    res.render('NPClisting', {s: req.query.s});
-});
 
-router.post('/?/', function(req, res) {
-    res.render(process.cwd() + '/views/NPClisting.handlebars');
+router.get("/listing", function(req,res){
+   res.render('NPClisting');
 });
-
 module.exports = router;

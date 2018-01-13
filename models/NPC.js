@@ -66,8 +66,5 @@ router.get('/NPClisting', function(req, res) {
     res.render('NPClisting');
 });
 
-router.post('/search/', function(req, res) {
-    res.render(process.cwd() + '/views/NPCListing.handlebars');
-});
 
 module.exports = router;
