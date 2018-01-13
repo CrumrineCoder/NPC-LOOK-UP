@@ -12,6 +12,4 @@ module.exports = function (app, db) {
       .get(npcHandler.getAllNPCs)
   app.route('/api/NPC/?')
       .get(npcHandler.getOneNPC)
-  app.route('/api/search?')
-     .get(npcHandler.Search)
 };

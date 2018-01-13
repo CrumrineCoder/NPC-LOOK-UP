@@ -83,6 +83,9 @@ console.log(window.location.href);
                     elems[i].addEventListener('click', confirmIt, false);
                 }
             }
+          else{
+            alert("No NPC can be found by that name.")
+          }
         }
     });
 })();

@@ -9,14 +9,8 @@ Plan:
 
 Commenting ability
 Ability to report a comment or NPC for spam or offensive material
-Search functionality [done]
-
-  
-  Returns an organized list instead of just the JSON
   
 Change Password
-
-Liking NPCs and seeing your liked NPCs
 
 CSS
 Edit and Delete buttons
