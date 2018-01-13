@@ -40,15 +40,12 @@ console.log(window.location.href);
 
         function showNPCs(data) {
             var NPCObject = JSON.parse(data);
-            console.log("Show NPCs");
-            console.log(NPCObject);
-            console.log($scope.search);
+           
             if ($scope.search != "") {
-              console.log("Bird");
-                NPCObject = NPCObject.find( function(obj){ console.log(obj); return obj.name = $scope.search});
+                NPCObject = NPCObject.filter( function(obj){return (obj.Name.toLowerCase()).indexOf($scope.search.toLowerCase()) != -1});
             }
-            console.log(NPCObject);
-            //   var resultObject = search(user, NPCObject);
+          
+          console.log(NPCObject); 
             for (var i = 0; i < NPCObject.length; i++) {
                 $scope.$apply(function() {
                     $scope.NPCs.push(NPCObject[i]);
