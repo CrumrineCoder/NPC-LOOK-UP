@@ -5,11 +5,12 @@
 </head>
 
 <body ng-app="npc" ng-controller="npcController">
-    <form action="/NPC/search?=" method="post"> 
-      <label for="npcName">Enter name: </label>
-      <input id="npcName" type="text" name="npcName" placeholder="NPC Name"> 
-      <input type="submit" value="Search"> 
+    <form > 
+      <label for="npcName">Search by name: </label>
+      <input id="npcName" type="text" name="npcName" ng-model="search" placeholder="NPC Name"> 
+
     </form>
+    {[{search}]}
     <div id="NPCContainer">
         <div ng-repeat="NPC in NPCs" class="NPCContainer">
             <div id="{[{NPC._id}]}">

@@ -8,6 +8,7 @@ console.log(window.location.href);
         $interpolateProvider.endSymbol('}]}');
     });
     app.controller('npcController', function($scope) {
+        $scope.search = "";
         $scope.NPCs = [];
         var apiUrl = 'https://npclookup.glitch.me/';
         var user;
