@@ -40,12 +40,11 @@ console.log(window.location.href);
 
         function showNPCs(data) {
             var NPCObject = JSON.parse(data);
-           
+           $scope.NPCs = [];
             if ($scope.search != "") {
                 NPCObject = NPCObject.filter( function(obj){return (obj.Name.toLowerCase()).indexOf($scope.search.toLowerCase()) != -1});
             }
           
-          console.log(NPCObject); 
             for (var i = 0; i < NPCObject.length; i++) {
                 $scope.$apply(function() {
                     $scope.NPCs.push(NPCObject[i]);
