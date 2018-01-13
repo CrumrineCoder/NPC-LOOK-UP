@@ -1,13 +1,13 @@
 'use strict';
 console.log(window.location.href);
 (function() {
-  
     var app = angular.module('npc', []);
     app.config(function($interpolateProvider) {
         $interpolateProvider.startSymbol('{[{');
         $interpolateProvider.endSymbol('}]}');
     });
     app.controller('npcController', function($scope) {
+        $scope.search = "";
         $scope.NPCs = [];
         var apiUrl = 'https://npclookup.glitch.me/';
         var user;
@@ -21,9 +21,12 @@ console.log(window.location.href);
                 callback();
             });
         }
-        getUser(function() {
-            ready(ajaxRequest('GET', apiUrl + "api/listings", showNPCs))
-        });
+        $scope.load = function reload() {
+            getUser(function() {
+                ready(ajaxRequest("GET", apiUrl + "api/listings", showNPCs))
+            });
+        }
+        $scope.load();
 
         function search(nameKey, myArray) {
             var newArr = [];
@@ -37,6 +40,14 @@ console.log(window.location.href);
 
         function showNPCs(data) {
             var NPCObject = JSON.parse(data);
+            console.log("Show NPCs");
+            console.log(NPCObject);
+            console.log($scope.search);
+            if ($scope.search != "") {
+              console.log("Bird");
+                NPCObject = NPCObject.find( function(obj){ console.log(obj); return obj.name = $scope.search});
+            }
+            console.log(NPCObject);
             //   var resultObject = search(user, NPCObject);
             for (var i = 0; i < NPCObject.length; i++) {
                 $scope.$apply(function() {
