@@ -12,11 +12,6 @@
 
         function showNPCs(data) {
             var NPCObject = JSON.parse(data);
-            for (var i = 0; i < NPCObject[0].comments.length; i++) {
-                if (NPCObject[0].comments[i].user == undefined) {
-                    NPCObject[0].comments[i].user = "Anonymous"
-                }
-            }
             $scope.$apply(function() {
                 $scope.NPC = NPCObject[0];
                 $scope.comments = NPCObject[0].comments;

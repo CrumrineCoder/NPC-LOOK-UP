@@ -2,18 +2,15 @@
 
 A website for looking up NPCs for use in tabletop games. 
 
-Commenting on NPCs; reporting NPCs or comments.
-Search formatting
-
 Plan: 
-
-Commenting ability
-Ability to report a comment or NPC for spam or offensive material
   
-Change Password
+Reset Password, Change Display Name
+Reply to Comments. Edit and Delete. Last edited dates.
 
 CSS
+
 Edit and Delete buttons
+Everything else; make it all look great.
 
 User Story 1: I can see all NPCs by compact and then expand to see the full page if I'm interested. 
 

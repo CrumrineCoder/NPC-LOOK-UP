@@ -29,9 +29,11 @@ router.get('/profile/', function(req, res) {
     res.render('profile');
 });
 router.post('/edit/', function(req, res) {
+    console.log(req.body);
     var newNPC = new NPC(req.body);
     NPC.replace(newNPC, function(err, NPC) {
         if (err) throw err;
+        console.log(NPC); 
     });
     req.flash('success_msg', 'Saves changed.');
     res.redirect('/');
@@ -70,13 +72,14 @@ router.post('/comment', function(req, res) {
         };
         return (S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4());
     }
-    var Comment = {user: undefined};
+    var Comment = {displayName: "Anonymous", username: undefined};
     Comment.comment = req.body.comment;
     Comment.commentID = guidGenerator();
     Comment.date = Date.now();
     var npcID = req.body.npcID;
     if (req.user) {
-        Comment.user = req.user.name;
+        Comment.displayName = req.user.name;
+        Comment.username = req.user.name;
     }
     npcs.update({
         _id: ObjectId(npcID)
