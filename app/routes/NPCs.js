@@ -47,7 +47,6 @@ router.post('/delete/', function(req, res) {
         res.redirect('/'); 
 });
 router.post('/create', function(req, res) {
-   console.log(req.body);
     req.checkBody('Name', 'Name is required').notEmpty();
     var errors = req.validationErrors();
      if (errors) {
@@ -55,13 +54,13 @@ router.post('/create', function(req, res) {
             errors: errors
         });
     } else {
- //       req.body.username = req.user.username; 
-  //      req.body.comments = []; 
+       req.body.username = req.user.username; 
+       req.body.comments = []; 
         
        var newNPC = new NPC(req.body);
-      //  NPC.createNPC(newNPC, function(err, NPC) {
-   //         if (err) throw err;
-    //    });
+       NPC.createNPC(newNPC, function(err, NPC) {
+          if (err) throw err;
+       });
         req.flash('success_msg', 'Your NPC was created.');
         res.redirect('/');
     }
