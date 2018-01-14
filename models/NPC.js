@@ -11,6 +11,7 @@ mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.NAME, {
 var db = mongoose.connection;
 //var Position = db.collection('Position');
 //var page; 
+console.log("HI"); 
 router.get('/create', function(req, res) {
    if (req.user) {
          res.render('create');
@@ -46,21 +47,25 @@ router.post('/delete/', function(req, res) {
         res.redirect('/'); 
 });
 router.post('/create', function(req, res) {
-    req.checkBody('Name', 'Name is required').notEmpty();
+  console.log(req.body); 
+ /*   req.checkBody('Name', 'Name is required').notEmpty();
     var errors = req.validationErrors();
      if (errors) {
         res.render('create', {
             errors: errors
         });
     } else {
+       console.log(req.body); 
         req.body.username = req.user.username; 
+        console.log(req.body); 
+        req.body.comments = []; 
         var newNPC = new NPC(req.body);
         NPC.createNPC(newNPC, function(err, NPC) {
             if (err) throw err;
         });
         req.flash('success_msg', 'Your NPC was created.');
         res.redirect('/');
-    }
+    }*/
 });
 router.get('/NPClisting', function(req, res) {
     res.render('NPClisting');

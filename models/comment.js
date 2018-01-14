@@ -1,27 +1,26 @@
-
+/*
 // This file handles the backend for the user mongoose schem and functions
 
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 
 // User Schema
-var UserSchema = mongoose.Schema({
-	username: {
-		type: String,
-		index:true
-	},
-	password: {
+var CommentSchema = mongoose.Schema({
+	comment: {
 		type: String
 	},
-	email: {
+	id: {
 		type: String
-	},
-	name: {
-		type: String
-	}
+	}, 
+  user:{
+    type: String
+  }, 
+  date:{
+    type: String
+  }
 });
 
-var User = module.exports = mongoose.model('User', UserSchema);
+var Comment = module.exports = mongoose.model('Comment', CommentSchema);
 
 module.exports.createUser = function(newUser, callback){
 
@@ -48,3 +47,4 @@ module.exports.comparePassword = function(candidatePassword, hash, callback){
     	callback(null, isMatch);
 	});
 }
+*/
