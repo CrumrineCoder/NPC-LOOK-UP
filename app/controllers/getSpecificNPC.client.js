@@ -12,12 +12,13 @@
 
         function showNPCs(data) {
             var NPCObject = JSON.parse(data);
-            console.log(NPCObject); 
-            for (var i = 0; i < NPCObject.length; i++) {
-                $scope.$apply(function() {
-                    $scope.NPC = NPCObject[i];
-                });
-            }
+  
+            //for (var i = 0; i < NPCObject.length; i++) {
+                 $scope.$apply(function() {
+                $scope.NPC = NPCObject[0];
+                $scope.comments = NPCObject[0].comments;
+            });
+           // }
         }
         ready(ajaxRequest('GET', apiUrl + "api/NPC/?id=" + page, showNPCs));
     });

@@ -5,7 +5,6 @@ var ObjectId = require('mongodb').ObjectID;
 //var passport = require('passport');
 //var LocalStrategy = require('passport-local').Strategy;
 var NPC = require(process.cwd() + '/models/NPC');
-var Comment = require(process.cwd() + '/models/comment');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.NAME, {
     useMongoClient: true
@@ -14,11 +13,11 @@ var db = mongoose.connection;
 var npcs = db.collection('npcs');
 //var page; 
 router.get('/create', function(req, res) {
-   if (req.user) {
-         res.render('create');
+    if (req.user) {
+        res.render('create');
     } else {
         res.render('login');
-    }  
+    }
 });
 router.get('/view/:id', function(req, res) {
     res.render('view');
@@ -26,89 +25,70 @@ router.get('/view/:id', function(req, res) {
 router.get('/edit/:id', function(req, res) {
     res.render('edit');
 });
-router.get('/profile/', function (req,res){
-   res.render('profile');
+router.get('/profile/', function(req, res) {
+    res.render('profile');
 });
-
 router.post('/edit/', function(req, res) {
-     var newNPC = new NPC(req.body);
-        NPC.replace(newNPC, function(err, NPC) {
-            if (err) throw err;
-        }); 
-      req.flash('success_msg', 'Saves changed.');
-        res.redirect('/');
+    var newNPC = new NPC(req.body);
+    NPC.replace(newNPC, function(err, NPC) {
+        if (err) throw err;
+    });
+    req.flash('success_msg', 'Saves changed.');
+    res.redirect('/');
 });
 router.post('/delete/', function(req, res) {
-    console.log(req.body);
-     var newNPC = new NPC(req.body);
-        NPC.delete(newNPC, function(err, NPC) {
-            if (err) throw err;
-        }); 
-      req.flash('success_msg', 'NPC deleted; you monster.');
-        res.redirect('/'); 
+    var newNPC = new NPC(req.body);
+    NPC.delete(newNPC, function(err, NPC) {
+        if (err) throw err;
+    });
+    req.flash('success_msg', 'NPC deleted; you monster.');
+    res.redirect('/');
 });
 router.post('/create', function(req, res) {
     req.checkBody('Name', 'Name is required').notEmpty();
     var errors = req.validationErrors();
-     if (errors) {
+    if (errors) {
         res.render('create', {
             errors: errors
         });
     } else {
-       req.body.username = req.user.username; 
-       req.body.comments = []; 
-        
-       var newNPC = new NPC(req.body);
-       NPC.createNPC(newNPC, function(err, NPC) {
-          if (err) throw err;
-       });
+        req.body.username = req.user.username;
+        req.body.comments = [];
+        var newNPC = new NPC(req.body);
+        NPC.createNPC(newNPC, function(err, NPC) {
+            if (err) throw err;
+        });
         req.flash('success_msg', 'Your NPC was created.');
         res.redirect('/');
     }
 });
-
 // Post a comment
-
 router.post('/comment', function(req, res) {
-  function guidGenerator() {
-    var S4 = function() {
-       return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
-    };
-    return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
-}
-    console.log(req.body); 
-    var comment = req.body.comment;  
-    var commentID = guidGenerator();
-    var date = Date.now();
-    var npcID = req.body.npcID;
-    if(req.user){
-      var user = req.user.username; 
+    function guidGenerator() {
+        var S4 = function() {
+            return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+        };
+        return (S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4());
     }
-  npcs.update({
-            _id: ObjectId(npcID)
-  }, {$push: {comments: "Test"}});
-
-   /* var newComment = new Comment({
-      	comment: comment,
-        id: commentID,
-        user: user,
-        date: date
-    }); */
-    // Will need to display undefined name sections as 'Anonymous'
-    // Find the NPC by npcID in the req.body and push to its 'Comment' section
-  
-  
-     /*   User.createUser(newUser, function(err, user) {
-            if (err) throw err;
-        }); */
-
-        req.flash('success_msg', 'You are registered and can now login');
-
-        res.redirect('/users/login');
-    
+    var Comment = {user: undefined};
+    Comment.comment = req.body.comment;
+    Comment.commentID = guidGenerator();
+    Comment.date = Date.now();
+    var npcID = req.body.npcID;
+    if (req.user) {
+        Comment.user = req.user.name;
+    }
+    npcs.update({
+        _id: ObjectId(npcID)
+    }, {
+        $push: {
+            comments: Comment
+        }
+    });
+    req.flash('success_msg', 'Your comment was posted.');
+    res.redirect('back');
 });
-
-router.get("/listing", function(req,res){
-   res.render('NPClisting');
+router.get("/listing", function(req, res) {
+    res.render('NPClisting');
 });
 module.exports = router;
