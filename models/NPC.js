@@ -1,75 +1,132 @@
-var express = require('express');
-var router = express.Router();
-// This file handles routing relation to making and viewing polls
-//var passport = require('passport');
-//var LocalStrategy = require('passport-local').Strategy;
-var NPC = require(process.cwd() + '/models/NPC');
+// This file handles the backend for the NPC mongoose schema
 var mongoose = require('mongoose');
+//mongoose.set('debug', true);
+
+var bcrypt = require('bcryptjs');
 mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.NAME, {
     useMongoClient: true
 });
 var db = mongoose.connection;
-//var Position = db.collection('Position');
-//var page; 
-console.log("HI"); 
-router.get('/create', function(req, res) {
-   if (req.user) {
-         res.render('create');
+ var npc = db.collection('npcs');
+
+var NPCSchema = mongoose.Schema({
+   Name: {
+     type: String, text: true
+   }
+}, {
+    strict: false
+});
+/*
+NPCSchema.index({
+    Background: 'text'
+});*/
+var ObjectId = require('mongodb').ObjectID;
+//console.log(npc.getIndexes());
+NPCSchema.index({"$**":"text"});
+//NPCSchema.createIndex({"Backstory":"text","Name":"text"})
+npc.createIndex({"$**":"text"});
+  
+var NPC = module.exports = mongoose.model('NPC', NPCSchema);
+
+module.exports.replace = function(newNPC, callback) {
+  npc.update({_id: ObjectId(newNPC._id) }, newNPC);
+}
+
+module.exports.delete = function(newNPC, callback){
+  console.log(newNPC);
+  npc.remove( { _id: ObjectId(newNPC._id) });
+}
+/*NPC.on('index', function(err) {
+    if (err) {
+        console.error('User index error: %s', err);
     } else {
-        res.render('login');
-    }  
-});
-router.get('/view/:id', function(req, res) {
-    res.render('view');
-});
-router.get('/edit/:id', function(req, res) {
-    res.render('edit');
-});
-router.get('/profile/', function (req,res){
-   res.render('profile');
-});
+        console.info('User indexing complete');
+    }
+}); */
+ 
+module.exports.createNPC = function(newNPC, callback) {
+      newNPC.save(callback);
 
-router.post('/edit/', function(req, res) {
-     var newNPC = new NPC(req.body);
-        NPC.replace(newNPC, function(err, NPC) {
-            if (err) throw err;
-        }); 
-      req.flash('success_msg', 'Saves changed.');
-        res.redirect('/');
-});
-router.post('/delete/', function(req, res) {
-    console.log(req.body);
-     var newNPC = new NPC(req.body);
-        NPC.delete(newNPC, function(err, NPC) {
-            if (err) throw err;
-        }); 
-      req.flash('success_msg', 'NPC deleted; you monster.');
-        res.redirect('/'); 
-});
-router.post('/create', function(req, res) {
-  console.log(req.body); 
- /*   req.checkBody('Name', 'Name is required').notEmpty();
-    var errors = req.validationErrors();
-     if (errors) {
-        res.render('create', {
-            errors: errors
+}
+/*
+var polls = db.collection('polls');
+var counter = db.collection('identitycounters');
+module.exports.replace = function(newPoll, callback) {
+var str = (newPoll.question).replace(/(['"])/g, "\\$1");
+   /*polls.find( {$text: {
+            $search: str
+        }}).forEach(function(item) {
+     console.log("Item: ");
+      console.log(item);
+    }); */
+  //  $search: '\"' + newPoll.question + '\"'
+  /*  polls.replaceOne({
+        $text: {
+            $search: '\"' + newPoll.question + '\"'
+        }
+    }, newPoll);
+  
+}
+    var Position = db.collection('Position');
+module.exports.delete = function(poll, callback) {
+    // Get the id of the question
+    var position;
+    polls.find({
+        question: poll.question
+    }).forEach(function(item) {
+        position = item.Position;
+        decrement(position);
+    });
+   Position.update({}, {
+        $inc: {
+            Position: -1,
+        }
+    });
+  
+   
+    polls.deleteOne({
+        question: poll.question
+    });
+  
+    counter.update({}, {
+        $inc: {
+            "count": -1
+        }
+    }, function(err, results) {
+        if (err) {
+            throw err
+        }
+        if (!results.length) {
+              console.log("Not found");
+        }
+    });
+    // Get every document with an ID larger than it and decrement it { qty: { $gt: 4 } } 
+    function decrement(id) {
+       
+        polls.update({
+            Position: {
+                $gt: id
+            }
+        }, {
+            $inc: {
+                Position: -1
+            }
+        }, { multi: true })
+    }
+}
+module.exports.checkExistance = function(poll, res, callback) {
+    polls.find({
+        question: poll.question
+    }, {
+        $exists: true
+    }).toArray(function(err, doc) //find if a value exists
+        {
+            if (doc && doc.length) //if it does
+            {
+                return callback(null, doc); // print out what it sends back
+            } else // if it does not 
+            {
+                return callback(null, "Not in docs");
+            }
         });
-    } else {
-       console.log(req.body); 
-        req.body.username = req.user.username; 
-        console.log(req.body); 
-        req.body.comments = []; 
-        var newNPC = new NPC(req.body);
-        NPC.createNPC(newNPC, function(err, NPC) {
-            if (err) throw err;
-        });
-        req.flash('success_msg', 'Your NPC was created.');
-        res.redirect('/');
-    }*/
-});
-router.get('/NPClisting', function(req, res) {
-    res.render('NPClisting');
-});
-
-
-module.exports = router;
+} */

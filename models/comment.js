@@ -1,4 +1,4 @@
-/*
+
 // This file handles the backend for the user mongoose schem and functions
 
 var mongoose = require('mongoose');
@@ -47,4 +47,3 @@ module.exports.comparePassword = function(candidatePassword, hash, callback){
     	callback(null, isMatch);
 	});
 }
-*/
