@@ -62,15 +62,18 @@
         </table> <br /> <span class="bold">Misc Notes:</span>
         <p>{[{NPC.Other}]} </p>
   
-    {[{comments.length}]} thoughts on {[{NPC.Name}]}
+    <h3>
+       {[{comments.length}]} thoughts on {[{NPC.Name}]}
+      </h3>
+      
     <div ng-repeat="comment in comments">
-    <div>
+    <div class="displayName">
        {[{comment.displayName}]}
       </div>
-       <div>
+       <div class="date">
       {[{ comment.date | date:'MM/dd/yyyy @ h:mma'}]}
       </div>
-     <p>
+     <p class="comment">
          {[{comment.comment}]}
       </p>    
     </div>
@@ -82,7 +85,7 @@
         <label for="comment" class="required">Your message</label>
         <textarea name="comment" id="comment" rows="10" tabindex="4"  required="required"></textarea>
         <input type="hidden" name="npcID" value={[{NPC._id}]} id="npcID" />
-    <input name="submit" type="submit" value="Submit comment" />
+    <input name="submit" type="submit" value="Submit comment" id="greenButton"/>
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

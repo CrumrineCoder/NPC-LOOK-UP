@@ -5,7 +5,7 @@ A website for looking up NPCs for use in tabletop games.
 Plan: 
   
 Reset Password, Change Display Name
-Reply to Comments. Edit and Delete. Last edited dates.
+Reply to Comments. Edit and Delete. Last edited dates. Comments made by the user of the NPC is highlighted. 
 
 CSS
 

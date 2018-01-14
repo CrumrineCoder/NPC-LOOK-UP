@@ -8,8 +8,8 @@
     <div id="NPCContainer">
         <div ng-repeat="NPC in NPCs" class="NPCContainer">
             <div id="{[{NPC._id}]}">
-                <a ng-href="edit/{[{NPC._id}]}">
-                    <h3>Edit {[{NPC.Name}]} </h3>
+                 <a ng-href="view/{[{NPC._id}]}">
+                    <h3> {[{NPC.Name}]} </h3>
                 </a>
             </div>
         </div>

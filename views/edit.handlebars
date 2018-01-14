@@ -95,11 +95,11 @@
         <label for="Other">Enter other notes that don't fit in any other category:</label>
          <textarea onkeyup="auto_grow(this)"  id="Other" type="text" name="Other" >{[{NPC.Other}]} </textarea>   
         <input type="hidden" name="comments" value= {[{NPC.comments}]}></input>
-         <button type="submit"  style="margin-top: 10px;" value="Send order">Save Changes</button>
+         <button type="submit"  style="margin-top: 10px;" value="Send order" id="greenButton">Save Changes</button>
          
      <form method="post" action="/NPC/delete">
        <input type="hidden" name="_id" value={[{NPC._id}]}>
-        <button type="submit" class="confirmation">
+        <button type="submit" class="confirmation" id="delete">
         Delete
   </button>
      </form>
