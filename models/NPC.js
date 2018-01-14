@@ -24,6 +24,8 @@ npc.createIndex({
 });
 var NPC = module.exports = mongoose.model('NPC', NPCSchema);
 module.exports.replace = function(newNPC, callback) {
+    console.log(newNPC);
+  console.log("Duck");
     npc.update({
         _id: ObjectId(newNPC._id)
     }, newNPC);

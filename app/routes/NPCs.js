@@ -32,6 +32,7 @@ router.post('/edit/', function(req, res) {
     console.log(req.body);
     var newNPC = new NPC(req.body);
     NPC.replace(newNPC, function(err, NPC) {
+        console.log("Test");
         if (err) throw err;
         console.log(NPC); 
     });
