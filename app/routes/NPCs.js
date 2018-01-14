@@ -29,12 +29,12 @@ router.get('/profile/', function(req, res) {
     res.render('profile');
 });
 router.post('/edit/', function(req, res) {
-    console.log(req.body);
+
+  var arr = JSON.parse(req.body.comments);
+  req.body.comments = arr;
     var newNPC = new NPC(req.body);
     NPC.replace(newNPC, function(err, NPC) {
-        console.log("Test");
         if (err) throw err;
-        console.log(NPC); 
     });
     req.flash('success_msg', 'Saves changed.');
     res.redirect('/');
