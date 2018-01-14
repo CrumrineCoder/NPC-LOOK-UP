@@ -54,7 +54,7 @@ console.log(window.location.href);
                 for (var i = 0; i < NPCObject.length; i++) {
                     if (user == NPCObject[i].username) {
                         var link = document.createElement("a");
-                        link.href = "edit/" + NPCObject[i]._id;
+                        link.href = "NPC/edit/" + NPCObject[i]._id;
                         var textnode = document.createTextNode("Edit");
                         link.appendChild(textnode);
                         document.getElementById(NPCObject[i]._id).appendChild(link);

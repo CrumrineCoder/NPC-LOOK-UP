@@ -2,16 +2,17 @@
 
 <head>
     <title>NPC App</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body ng-app="npc" ng-controller="npcController">
     <form> <label for="npcName">Search by name: </label> <input id="npcName" type="text" name="npcName" ng-model="search" placeholder="NPC Name"> <button ng-click="load()">
-      Apply
+      <i class="fa fa-search"></i>
   </button> </form> 
     <div id="NPCContainer">
         <div ng-repeat="NPC in NPCs" class="NPCContainer">
             <div id="{[{NPC._id}]}">
-                <a ng-href="view/{[{NPC._id}]}">
+                <a ng-href="NPC/view/{[{NPC._id}]}">
                     <h3> {[{NPC.Name}]} </h3>
                 </a>
             </div> <span class="bold">Hooks:</span>
