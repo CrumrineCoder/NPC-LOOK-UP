@@ -29,7 +29,6 @@ router.get('/profile/', function(req, res) {
     res.render('profile');
 });
 router.post('/edit/', function(req, res) {
-
   var arr = JSON.parse(req.body.comments);
   req.body.comments = arr;
     var newNPC = new NPC(req.body);
