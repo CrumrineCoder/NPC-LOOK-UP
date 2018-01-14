@@ -35,3 +35,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * A few friends for reviewing the design of the website over the course of the development of the website. 
+* AdventureLookup.com and Undead.live are the main inspirations for this website
