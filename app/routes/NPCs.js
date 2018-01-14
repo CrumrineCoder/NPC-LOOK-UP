@@ -1,16 +1,17 @@
 var express = require('express');
 var router = express.Router();
+var ObjectId = require('mongodb').ObjectID;
 // This file handles routing relation to making and viewing polls
 //var passport = require('passport');
 //var LocalStrategy = require('passport-local').Strategy;
 var NPC = require(process.cwd() + '/models/NPC');
-//var Comment = require(process.cwd() + '/models/comment');
+var Comment = require(process.cwd() + '/models/comment');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.NAME, {
     useMongoClient: true
 });
 var db = mongoose.connection;
-//var Position = db.collection('Position');
+var npcs = db.collection('npcs');
 //var page; 
 router.get('/create', function(req, res) {
    if (req.user) {
@@ -67,7 +68,7 @@ router.post('/create', function(req, res) {
 });
 
 // Post a comment
-/*
+
 router.post('/comment', function(req, res) {
   function guidGenerator() {
     var S4 = function() {
@@ -79,34 +80,33 @@ router.post('/comment', function(req, res) {
     var comment = req.body.comment;  
     var commentID = guidGenerator();
     var date = Date.now();
+    var npcID = req.body.npcID;
     if(req.user){
       var user = req.user.username; 
     }
-    var newComment = new Comment({
+  npcs.update({
+            _id: ObjectId(npcID)
+  }, {$push: {comments: "Test"}});
+
+   /* var newComment = new Comment({
       	comment: comment,
         id: commentID,
         user: user,
         date: date
-    });
-  // Get the Date and add it
-  // Test if the comment is made by a user and if so store it. 
+    }); */
     // Will need to display undefined name sections as 'Anonymous'
-  /*
-      var newUser = new User({
-            name: name,
-            email: email,
-            username: username,
-            password: password
-        });
-        User.createUser(newUser, function(err, user) {
+    // Find the NPC by npcID in the req.body and push to its 'Comment' section
+  
+  
+     /*   User.createUser(newUser, function(err, user) {
             if (err) throw err;
-        });
+        }); */
 
         req.flash('success_msg', 'You are registered and can now login');
 
         res.redirect('/users/login');
-    */
-//});*/
+    
+});
 
 router.get("/listing", function(req,res){
    res.render('NPClisting');
