@@ -64,6 +64,12 @@
   
     {[{comments.length}]} thoughts on {[{NPC.Name}]}
     <div ng-repeat="comment in comments">
+    <div>
+       {[{comment.user}]}
+      </div>
+       <div>
+      {[{ comment.date | date:'MM/dd/yyyy @ h:mma'}]}
+      </div>
      <p>
          {[{comment.comment}]}
       </p>    
