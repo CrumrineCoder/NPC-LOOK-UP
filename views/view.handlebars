@@ -75,7 +75,7 @@
     <form action="/NPC/comment" method="post" id="commentform">
         <label for="comment" class="required">Your message</label>
         <textarea name="comment" id="comment" rows="10" tabindex="4"  required="required"></textarea>
-        <input type="hidden" name="comment_post_ID" value="1" id="comment_post_ID" />
+        <input type="hidden" name="npcID" value={[{NPC._id}]} id="npcID" />
     <input name="submit" type="submit" value="Submit comment" />
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>

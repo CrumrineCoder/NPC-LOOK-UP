@@ -4,6 +4,7 @@ var router = express.Router();
 //var passport = require('passport');
 //var LocalStrategy = require('passport-local').Strategy;
 var NPC = require(process.cwd() + '/models/NPC');
+//var Comment = require(process.cwd() + '/models/comment');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.NAME, {
     useMongoClient: true
@@ -46,6 +47,7 @@ router.post('/delete/', function(req, res) {
         res.redirect('/'); 
 });
 router.post('/create', function(req, res) {
+   console.log(req.body);
     req.checkBody('Name', 'Name is required').notEmpty();
     var errors = req.validationErrors();
      if (errors) {
@@ -53,17 +55,20 @@ router.post('/create', function(req, res) {
             errors: errors
         });
     } else {
-        req.body.username = req.user.username; 
-        var newNPC = new NPC(req.body);
-        NPC.createNPC(newNPC, function(err, NPC) {
-            if (err) throw err;
-        });
+ //       req.body.username = req.user.username; 
+  //      req.body.comments = []; 
+        
+       var newNPC = new NPC(req.body);
+      //  NPC.createNPC(newNPC, function(err, NPC) {
+   //         if (err) throw err;
+    //    });
         req.flash('success_msg', 'Your NPC was created.');
         res.redirect('/');
     }
 });
 
 // Post a comment
+/*
 router.post('/comment', function(req, res) {
   function guidGenerator() {
     var S4 = function() {
@@ -71,12 +76,23 @@ router.post('/comment', function(req, res) {
     };
     return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
 }
-   console.log("Dingus");
-  console.log(req.body); 
+    console.log(req.body); 
     var comment = req.body.comment;  
     var commentID = guidGenerator();
-    console.log(commentID);
-  
+    var date = Date.now();
+    if(req.user){
+      var user = req.user.username; 
+    }
+    var newComment = new Comment({
+      	comment: comment,
+        id: commentID,
+        user: user,
+        date: date
+    });
+  // Get the Date and add it
+  // Test if the comment is made by a user and if so store it. 
+    // Will need to display undefined name sections as 'Anonymous'
+  /*
       var newUser = new User({
             name: name,
             email: email,
@@ -90,8 +106,8 @@ router.post('/comment', function(req, res) {
         req.flash('success_msg', 'You are registered and can now login');
 
         res.redirect('/users/login');
-    
-});
+    */
+//});*/
 
 router.get("/listing", function(req,res){
    res.render('NPClisting');
