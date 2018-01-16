@@ -1,6 +1,7 @@
 'use strict';
 (function() {
     var app = angular.module('npc', []);
+    	// Because handlebar uses {{}}, we have to use {[{}]}
     app.config(function($interpolateProvider) {
         $interpolateProvider.startSymbol('{[{');
         $interpolateProvider.endSymbol('}]}');
@@ -36,20 +37,20 @@
         function showNPCs(data) {
             var NPCObject = JSON.parse(data);
             var resultObject = search(user, NPCObject);
-            console.log(NPCObject);
-            console.log(resultObject);
+           // Show the NPCs
             for (var i = 0; i < resultObject.length; i++) {
                 $scope.$apply(function() {
                     $scope.NPCs.push(resultObject[i]);
                 });
             }
+           // Add the edit buttons
             if (resultObject.length > 0) {
                 for (var i = 0; i < resultObject.length; i++) {
-                     var link = document.createElement("a");
-                        link.href = "edit/" + NPCObject[i]._id;
-                        var textnode = document.createTextNode("Edit");
-                        link.appendChild(textnode);
-                        document.getElementById(NPCObject[i]._id).appendChild(link);
+                    var link = document.createElement("a");
+                    link.href = "edit/" + NPCObject[i]._id;
+                    var textnode = document.createTextNode("Edit");
+                    link.appendChild(textnode);
+                    document.getElementById(NPCObject[i]._id).appendChild(link);
                 }
                 var elems = document.getElementsByClassName('confirmation');
                 var confirmIt = function(e) {

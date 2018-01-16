@@ -1,17 +1,21 @@
 'use strict';
 console.log(window.location.href);
 (function() {
+    // Set up Angular
     var app = angular.module('npc', []);
+    // Because handlebars already uses {{}}, we have to use {[{}]}
     app.config(function($interpolateProvider) {
         $interpolateProvider.startSymbol('{[{');
         $interpolateProvider.endSymbol('}]}');
     });
     app.controller('npcController', function($scope) {
+        // User search angular var
         $scope.search = "";
+        // NPCs to show to the user angular var
         $scope.NPCs = [];
         var apiUrl = 'https://npclookup.glitch.me/';
         var user;
-
+        // Get the current user  logged in 
         function getUser(callback) {
             ajaxRequest('GET', apiUrl + "users/user_data", function(data) {
                 data = JSON.parse(data);
@@ -21,13 +25,15 @@ console.log(window.location.href);
                 callback();
             });
         }
+        // Show the NPCs on page load
         $scope.load = function reload() {
             getUser(function() {
                 ready(ajaxRequest("GET", apiUrl + "api/listings", showNPCs))
             });
         }
         $scope.load();
-
+        // Search bar functionality: based on the search text, reduce the array of NPCs
+        // Oudated, now we filter. 
         function search(nameKey, myArray) {
             var newArr = [];
             for (var i = 0; i < myArray.length; i++) {
@@ -40,16 +46,21 @@ console.log(window.location.href);
 
         function showNPCs(data) {
             var NPCObject = JSON.parse(data);
-           $scope.NPCs = [];
+            // Reset the NPCs var on load
+            $scope.NPCs = [];
+            // If the user is searching, then filter the NPCs returned
             if ($scope.search != "") {
-                NPCObject = NPCObject.filter( function(obj){return (obj.Name.toLowerCase()).indexOf($scope.search.toLowerCase()) != -1});
+                NPCObject = NPCObject.filter(function(obj) {
+                    return (obj.Name.toLowerCase()).indexOf($scope.search.toLowerCase()) != -1
+                });
             }
-          
+            // Put the NPCs into the NPC array to display to the user
             for (var i = 0; i < NPCObject.length; i++) {
                 $scope.$apply(function() {
                     $scope.NPCs.push(NPCObject[i]);
                 });
             }
+            // Add the edit button for the creator of the NPCs
             if (NPCObject.length > 0) {
                 for (var i = 0; i < NPCObject.length; i++) {
                     if (user == NPCObject[i].username) {
@@ -68,9 +79,10 @@ console.log(window.location.href);
                     elems[i].addEventListener('click', confirmIt, false);
                 }
             }
-          else{
-            alert("No NPC can be found by that name.")
-          }
+            // Error handling
+            else {
+                alert("No NPC can be found by that name.")
+            }
         }
     });
 })();

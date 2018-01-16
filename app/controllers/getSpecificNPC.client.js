@@ -2,6 +2,7 @@
     var path = window.location.pathname;
     var page = path.split("/").pop();
     var angularApp = angular.module('npc', []);
+  	// Because handlebar uses {{}}, we have to use {[{}]}
     angularApp.config(function($interpolateProvider) {
         $interpolateProvider.startSymbol('{[{');
         $interpolateProvider.endSymbol('}]}');
@@ -12,6 +13,7 @@
 
         function showNPCs(data) {
             var NPCObject = JSON.parse(data);
+          // Show the NPC and comments
             $scope.$apply(function() {
                 $scope.NPC = NPCObject[0];
                 $scope.comments = NPCObject[0].comments;

@@ -5,22 +5,15 @@ function auto_grow(element) {
     element.style.height = (element.scrollHeight) + "px";
 }
 (function() {
-    /*    var app = angular.module('npc', []);
-        app.config(function($interpolateProvider) {
-            $interpolateProvider.startSymbol('{[{');
-            $interpolateProvider.endSymbol('}]}');
-        });
-        app.controller('npcController', function($scope) {
-            $scope.NPCs = []; */
     var apiUrl = 'https://npclookup.glitch.me/';
-
+    // Remove duplicates from an array
     function uniq(a) {
         var seen = {};
         return a.filter(function(item) {
             return seen.hasOwnProperty(item) ? false : (seen[item] = true);
         });
     }
-
+    // Show the NPC values on the listing
     function showNPCs(data) {
         var NPCObject = JSON.parse(data);
         var Age = uniq(NPCObject.map(function(a) {
@@ -38,9 +31,6 @@ function auto_grow(element) {
         var Faction = uniq(NPCObject.map(function(a) {
             return a.FactionType;
         }));
-        /*     var Location = NPCObject.map(function(a) {
-                 return a.Location;
-             }); */
         var AgeList = document.getElementById('AgeList');
         Age.forEach(function(item) {
             var option = document.createElement('option');
@@ -71,12 +61,6 @@ function auto_grow(element) {
             option.value = item;
             FactionList.appendChild(option);
         });
-        /*    var LocationList = document.getElementById('LocationList');
-            Location.forEach(function(item) {
-                var option = document.createElement('option');
-                option.value = item;
-                LocationList.appendChild(option);
-            }); */
     }
     ready(ajaxRequest('GET', apiUrl + "api/listings", showNPCs));
 })();

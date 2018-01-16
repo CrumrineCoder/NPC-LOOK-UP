@@ -18,6 +18,7 @@ User Story 3: I can search for NPCs.
 
 ## Built With
 
+* [Glitch](https://glitch.com/) - Hosting the website online
 * [MongoDB](https://www.mongodb.com/) - Moving data.
 * [Express](https://expressjs.com/) - Routing.
 * [Angular](https://angularjs.org/) - Used to display data.
