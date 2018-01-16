@@ -1,5 +1,5 @@
 
-
+// Run a function on page load
 function ready(fn) {
     // Will do the function once the document is ready
     if (typeof fn !== 'function') {
@@ -10,7 +10,7 @@ function ready(fn) {
     }
     document.addEventListener('DOMContentLoaded', fn, false);
 }
-
+// Make an ajaxRequest to the backend
 function ajaxRequest(method, url, callback) {
     var xmlhttp = new XMLHttpRequest();
     // Everytime the readystage changes, we're checking if it's done, and if so this function will do the callback

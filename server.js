@@ -14,7 +14,7 @@ var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
- 
+// Connect to the database with Mongoose
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.NAME, {
     useMongoClient: true
@@ -29,23 +29,23 @@ var MongoClient = mongodb.MongoClient;
 var mLab = 'mongodb://' + process.env.HOST + '/' + process.env.NAME;
 var app = express();
 
-// Taken from: c
+// Set up the handlebars html view
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', exphbs({
     defaultLayout: 'layout'
 }));
 app.set('view engine', 'handlebars');
-
+// Body and cookie arsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use(cookieParser());
-
+// Shortcut the routes
 app.use('/public', express.static(process.cwd() + '/public'));
 app.use('/controllers', express.static(process.cwd() + '/app/controllers'));
 app.use('/views', express.static(process.cwd() + '/views'));
-
+// Passport set up
 app.use(session({
     secret: process.env.PASSKEY,
     saveUninitialized: true,
@@ -54,8 +54,7 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
-//app.use(passport.authenticate('remember-me'));
-
+// Error validation
 app.use(expressValidator({
     errorFormatter: function(param, msg, value) {
         var namespace = param.split('.'),
@@ -72,7 +71,7 @@ app.use(expressValidator({
         };
     }
 }));
-
+// Error message
 app.use(flash());
 
 app.use(function(req, res, next) {
@@ -83,10 +82,10 @@ app.use(function(req, res, next) {
     next();
 });
  
-//app.use('/', routes);
+// Routing
 app.use('/users', users);
 app.use('/NPC', NPC); 
-
+// MongoDB connect 
 MongoClient.connect(mLab, function(err, db) {
  
     if (err) {

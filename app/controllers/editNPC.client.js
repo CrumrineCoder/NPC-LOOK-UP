@@ -1,3 +1,4 @@
+// Textarea auto grows 
 function auto_grow(element) {
     element.style.height = "5px";
     element.style.height = (element.scrollHeight) + "px";
@@ -6,11 +7,13 @@ function auto_grow(element) {
     var path = window.location.pathname;
     var page = path.split("/").pop();
     var app = angular.module('npc', []);
+	// Because handlebar uses {{}}, we have to use {[{}]}
     app.config(function($interpolateProvider) {
         $interpolateProvider.startSymbol('{[{');
         $interpolateProvider.endSymbol('}]}');
     });
     app.controller('npcController', function($scope) {
+		// Reset the NPC var
         $scope.NPC = [];
         var apiUrl = 'https://npclookup.glitch.me/';
         var elems = document.getElementsByClassName('confirmation');
@@ -20,7 +23,7 @@ function auto_grow(element) {
         for (var i = 0, l = elems.length; i < l; i++) {
             elems[i].addEventListener('click', confirmIt, false);
         }
-
+		// Show the NPCs
         function showNPCs(data) {
             var NPCObject = JSON.parse(data);
             for (var i = 0; i < NPCObject.length; i++) {
