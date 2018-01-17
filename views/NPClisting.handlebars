@@ -8,7 +8,7 @@
 <body ng-app="npc" ng-controller="npcController">
     <form> <label for="npcName">Search by name: </label> <input id="npcName" type="text" name="npcName" ng-model="search" placeholder="NPC Name"> <button ng-click="load()">
       <i class="fa fa-search"></i>
-  </button> </form> 
+  </button> Click the NPC's Name to see more details or comment!</form> 
     <div id="NPCContainer">
         <div ng-repeat="NPC in NPCs" class="NPCContainer">
             <div id="{[{NPC._id}]}">
