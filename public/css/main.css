@@ -18,13 +18,22 @@ textarea {
 /* Nav */
 
 nav{
-  background: #FCFCFC;
+  background: #DED9B2;
   margin-bottom: 3px;
 }
 h2{
   padding: 5px; 
   margin: 0; 
 }
+nav .navLink a{
+color: #666560;
+}
+nav .navLink a:hover {
+     background: #ADAA8B;
+  color: #DBDACE;
+     
+}
+
 
 /* NPC Listing */
 
