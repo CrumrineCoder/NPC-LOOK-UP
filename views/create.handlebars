@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<h2 class="page-header">Create NPC</h2>
+
 <html>
    <head>
 
    </head>
    <body>
-      <h4 style="color: red;">
+  
+      <form method="post" action="/NPC/create"  name="npcCreationForm" id="createNPCFORM" class="section">
+        <h2 class="page-header">Create NPC</h2>
+            <h4 style="color: red;">
         The only information required is the name. All other fields are optional. Placeholders are an example of what I mean by the name of the section.
      </h4>
-      <form method="post" action="/NPC/create"  name="npcCreationForm" id="createNPCFORM">
          <label required for="Name">[Required. Will be displayed on NPC listing]Enter the Character's Name:</label>
          <input ng-model="Name" id="Name" name="Name" placeholder="Gandalf the Grey" required/> 
          <h3>
