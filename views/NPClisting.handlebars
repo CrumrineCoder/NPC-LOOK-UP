@@ -9,7 +9,6 @@
     <form> <label for="npcName">Search by name: </label> <input id="npcName" type="text" name="npcName" ng-model="search" placeholder="NPC Name"> <button ng-click="load()">
       <i class="fa fa-search"></i>
   </button> Click the NPC's Name to see more details or comment!</form> 
-    <div id="NPCContainer">
         <div ng-repeat="NPC in NPCs" class="NPCContainer">
             <div id="{[{NPC._id}]}">
                 <a ng-href="NPC/view/{[{NPC._id}]}">
@@ -48,7 +47,7 @@
             </table>
         </div>
       
-    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="/controllers/ajaxRequest.js"></script>

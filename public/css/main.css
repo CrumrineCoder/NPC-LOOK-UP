@@ -1,3 +1,7 @@
+body{
+  background: lemonchiffon;
+  margin: 0; 
+}
 
 textarea {
     resize: none;
@@ -11,9 +15,18 @@ textarea {
 
 #createNPCFORM input, #createNPCFORM textarea{display: block; width: 100%;}
 
+/* Nav */
+
+nav{
+  background: #FCFCFC;
+  margin-bottom: 3px;
+}
+h2{
+  padding: 5px; 
+  margin: 0; 
+}
+
 /* NPC Listing */
-
-
 
 table {
   border-collapse: collapse;
@@ -32,15 +45,12 @@ hr{
   border-top: 1px solid #CAD2B9;
 }
 
-#NPCContainer{
-  margin: 0 auto; 
-
-}
 
 .NPCContainer{
   border: 1px solid black; 
   padding: 5px;
   margin: 5px 0px; 
+  background: white; 
 }
 
 
@@ -48,6 +58,13 @@ hr{
 
 .bold{
   font-weight: bold; 
+}
+
+.section{
+  margin: 0 auto; 
+  background: white; 
+  border: 1px solid black; 
+  padding: 5px; 
 }
 
 
