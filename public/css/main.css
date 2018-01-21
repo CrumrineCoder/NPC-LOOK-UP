@@ -1,5 +1,5 @@
 body{
-  background: lemonchiffon;
+  background: #DED9B2;
   margin: 0; 
 }
 
@@ -18,7 +18,7 @@ textarea {
 /* Nav */
 
 nav{
-  background: #DED9B2;
+  background: lemonchiffon;
   margin-bottom: 3px;
 }
 h2{
@@ -29,8 +29,8 @@ nav .navLink a{
 color: #666560;
 }
 nav .navLink a:hover {
-     background: #ADAA8B;
-  color: #DBDACE;
+  background: #ADAA8B;
+  color: white;
      
 }
 
@@ -62,6 +62,20 @@ hr{
   background: white; 
 }
 
+.searchButton{
+  color: black; 
+  background: white;
+  border: 1px solid grey; 
+  width: 40px; 
+  height: 25px;
+  padding: 1px; 
+  
+}
+
+.searchButton:hover{
+  background: #A8A587;
+  color: white; 
+}
 
 /* Individual NPC pages */
 
