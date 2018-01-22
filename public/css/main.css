@@ -62,6 +62,10 @@ hr{
   background: white; 
 }
 
+ #npcName{
+    width: 30%; 
+  }
+
 .searchButton{
   color: black; 
   background: white;
@@ -137,4 +141,24 @@ hr{
 .date{
   color: #424540;
   font-size: 12px; 
+}
+
+
+/* Media Queries */
+@media only screen and (max-width: 800px) {
+  #npcName{
+    width: 80%; 
+    font-size: 20px;
+  }
+  .searchButton{
+    width: 19%;
+    height: 39px;
+    border-radius: 1px; 
+  }
+  #tip{
+    display: block; 
+  }
+  #greenButton{
+    width: 100%;
+  }
 }
