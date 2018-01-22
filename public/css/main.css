@@ -158,7 +158,7 @@ hr{
   #tip{
     display: block; 
   }
-  #greenButton{
+  #greenButton, #delete{
     width: 100%;
   }
 }
