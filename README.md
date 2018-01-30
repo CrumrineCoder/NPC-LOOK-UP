@@ -1,6 +1,8 @@
 # NPC Lookup
 
-NPC Lookup is a website for storing Non-Playable-Characters (NPC) for tabletop games in a database. Users can browse these NPCs and comment on them. There is also a login system.
+This is a full stack website that lets users create Non Playable Characters (NPCs) and add them to the database. Other users can view them and comment on them. Users can edit NPCs they've made and they only need to fill out the name. Users can also search for NPCs.
+
+This was a personal project for an idea I had after looking at AdventureLookup and Undead.live. I refined the skills I learned making the Voting website by routing the individual pages better, incorporating Angular to display the data, experimenting with a comment section. Next steps are replying to comments, deleting and editing comments, and changing passwords.
 
 ## To Do
 
