@@ -7,6 +7,9 @@ NPC Lookup is a website for storing Non-Playable-Characters (NPC) for tabletop g
 * Resetting password and changing display name on the profile page. 
 * Replying to comments and editing or deleting them on the NPC pages. If the user who created the NPC comments then there should be an indication
 * Public profile pages if I want the NPCs to be more public and less anonymously made. 
+* User Guest accounts. 
+* Pages for NPCs
+* Sort by: 
 
 ## User Stories
 
