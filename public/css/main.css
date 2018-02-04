@@ -145,14 +145,14 @@ hr{
 
 
 /* Media Queries */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 700px) {
   #npcName{
-    width: 80%; 
-    font-size: 20px;
+    width: 75%; 
+    font-size: 18px;
   }
   .searchButton{
-    width: 19%;
-    height: 39px;
+    width: 24%;
+    height: 32px;
     border-radius: 1px; 
   }
   #tip{
@@ -160,5 +160,24 @@ hr{
   }
   #greenButton, #delete{
     width: 100%;
+  }
+  #labelNPCname{
+    display: block;
+  }
+}
+
+
+@media only screen and (max-width: 500px) {
+.searchButton{
+    width: 100%;
+  }
+  #npcName{
+  width: 100%;
+  }
+  h2{
+    width: 100%;
+  }
+  ul{
+    display: block;
   }
 }
