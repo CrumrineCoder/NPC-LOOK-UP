@@ -180,4 +180,7 @@ hr{
   ul{
     display: block;
   }
+    .pull-right{
+    font-size: 13px;
+  }
 }
