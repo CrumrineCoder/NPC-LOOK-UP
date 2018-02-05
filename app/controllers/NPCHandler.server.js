@@ -14,6 +14,7 @@ function NPCHandler(db) {
     }
     // Get one NPC
     this.getOneNPC = function(req, res) {
+      console.log(req.query.id);
         npc.find({
             _id: ObjectId(req.query.id)
         }).toArray(function(err, documents) {
