@@ -2,11 +2,12 @@
 var mongoose = require('mongoose');
 //mongoose.set('debug', true);
 var bcrypt = require('bcryptjs');
-mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.NAME, {
-    useMongoClient: true
+mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.NAME + "?authMode=scram-sha1", {
 });
+
 var db = mongoose.connection;
 var npc = db.collection('npcs');
+
 var NPCSchema = mongoose.Schema({
     Name: {
         type: String,
@@ -16,13 +17,19 @@ var NPCSchema = mongoose.Schema({
     strict: false
 });
 var ObjectId = require('mongodb').ObjectID;
+
+/*
 NPCSchema.index({
     "$**": "text"
 });
 npc.createIndex({
     "$**": "text"
 });
-var NPC = module.exports = mongoose.model('NPC', NPCSchema);
+*/
+
+// The below line is causing problems. It may not be needed.
+ var NPC = module.exports = mongoose.model('NPC', NPCSchema);
+
 module.exports.replace = function(newNPC, callback) {
     npc.update({
         _id: ObjectId(newNPC._id)
