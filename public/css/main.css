@@ -164,6 +164,9 @@ hr{
   #labelNPCname{
     display: block;
   }
+  ul{
+    display: block;
+  }
 }
 
 
@@ -177,9 +180,7 @@ hr{
   h2{
     width: 100%;
   }
-  ul{
-    display: block;
-  }
+  
     .pull-right{
     font-size: 13px;
   }

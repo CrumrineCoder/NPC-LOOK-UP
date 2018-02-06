@@ -10,8 +10,10 @@ This was a personal project for an idea I had after looking at AdventureLookup a
 * Replying to comments and editing or deleting them on the NPC pages. If the user who created the NPC comments then there should be an indication
 * Public profile pages if I want the NPCs to be more public and less anonymously made. 
 * User Guest accounts. 
-* Pages for NPCs
 * Sort by: 
+* In the listing for NPCs, have pages.
+* Random sorting as well on the listing by default. 
+* Update to Mongodb 3.6 and Mongoose 5
 
 ## User Stories
 
