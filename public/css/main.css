@@ -155,7 +155,7 @@ hr{
     height: 32px;
     border-radius: 1px; 
   }
-  #tip{
+  .tip{
     display: block; 
   }
   #greenButton, #delete{
