@@ -4,29 +4,51 @@
 /*
   This file handles connecting the user to the server and the controllers to the database. 
 */
+require('dotenv').config();
+// Used to join paths regardless of operating system.
 var path = require('path');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+
+// The view engine I use throughout the site.
 var exphbs = require('express-handlebars');
-var expressValidator = require('express-validator');
-var flash = require('connect-flash');
+
+// Middleware that takes the incoming request and converts it to req.body
+var bodyParser = require('body-parser');
+
+// Test
+var cookieParser = require('cookie-parser');
+
+// Used to save data to the session ID.
 var session = require('express-session');
+
+// Authentication Middleware
 var passport = require('passport');
+
+// Name says it all; middleware for input validation
+var expressValidator = require('express-validator');
+
+// Middleware for storing messages to send to the user as part of the session
+var flash = require('connect-flash');
+
+// Password and username authentication.
 var LocalStrategy = require('passport-local').Strategy;
+
+var mLab = 'mongodb://' + process.env.HOST + '/' + process.env.NAME + "?authMode=scram-sha1";
 
 // Connect to the database with Mongoose
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.NAME, {
-    useMongoClient: true
+mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.NAME + "?authMode=scram-sha1", {
+
 });
+
 var db = mongoose.connection;
+
 var users = require('./app/routes/users.js');
-var NPC = require('./app/routes/NPCs.js');
+var NPC = require('./app/routes/NPCs.js'); 
 var express = require('express'),
-    routes = require('./app/routes/index.js'),
+   routes = require('./app/routes/index.js'),
     mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
-var mLab = 'mongodb://' + process.env.HOST + '/' + process.env.NAME;
+
 var app = express();
 
 // Set up the handlebars html view
@@ -35,7 +57,7 @@ app.engine('handlebars', exphbs({
     defaultLayout: 'layout'
 }));
 app.set('view engine', 'handlebars');
-// Body and cookie arsing
+// Body and cookie parsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
@@ -86,17 +108,19 @@ app.use(function(req, res, next) {
 app.use('/users', users);
 app.use('/NPC', NPC); 
 // MongoDB connect 
-MongoClient.connect(mLab, function(err, db) {
+
+
+MongoClient.connect(mLab, function(err, client) {
  
     if (err) {
         throw new Error('Database failed to connect!');
     } else {
-      //  console.log('MongoDB successfully connected on port 27017.');
+        console.log('MongoDB successfully connected on port 27017.');
     }
- 
+	 var db = client.db('npc')
     //Exports the routes to app and db
     routes(app, db);
     app.listen(3000, function() {
-    //    console.log('Listening on port 3000...');
+        console.log('Listening on port 3000...');
     });
 });
