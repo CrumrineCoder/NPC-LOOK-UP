@@ -6,8 +6,7 @@ var ObjectId = require('mongodb').ObjectID;
 //var LocalStrategy = require('passport-local').Strategy;
 var NPC = require(process.cwd() + '/models/NPC');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.NAME, {
-    useMongoClient: true
+mongoose.connect('mongodb://' + process.env.HOST + '/' + process.env.NAME + "?authMode=scram-sha1", {
 });
 var db = mongoose.connection;
 var npcs = db.collection('npcs');
@@ -30,10 +29,8 @@ router.get('/profile/', function(req, res) {
 });
 router.post('/edit/', function(req, res) {
   var arr = JSON.parse(req.body.comments);
-
   req.body.comments = arr;
     var newNPC = new NPC(req.body);
- 
     NPC.replace(newNPC, function(err, NPC) {
         if (err) throw err;
     });
