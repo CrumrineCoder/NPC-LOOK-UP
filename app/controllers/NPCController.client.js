@@ -1,5 +1,5 @@
 'use strict';
-console.log(window.location.href);
+
 (function() {
     // Set up Angular
     var app = angular.module('npc', []);

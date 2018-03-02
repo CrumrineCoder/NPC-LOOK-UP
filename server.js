@@ -4,6 +4,7 @@
 /*
   This file handles connecting the user to the server and the controllers to the database. 
 */
+
 require('dotenv').config();
 // Used to join paths regardless of operating system.
 var path = require('path');
