@@ -5,9 +5,10 @@
    <body ng-app="npc" ng-controller="npcController">
       <form> 
         <label class="tip" for="npcName">Search by name: </label> 
-        <input id="searchBar" type="text" name="npcName" ng-model="search" placeholder="NPC Name"><button id="searchButton" ng-click="load()">
+        <button id="searchButton" ng-click="load()">
            <i class="fa fa-search"></i>
         </button> 
+        <input id="searchBar" type="text" name="npcName" ng-model="search" placeholder="NPC Name">
         <span class="tip">Click the NPC's Name to see more details or comment!</span>
       </form>
       <div ng-repeat="NPC in NPCs" class="NPCContainer">

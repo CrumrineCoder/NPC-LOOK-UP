@@ -54,11 +54,12 @@ textarea {
 	background: white;
 }
 #searchBar {
-	width: 75%;
+  width: calc(100% - 70px);
 	font-size: 18px;
   height: 40px; 
 }
 #searchButton {
+  float: right; 
 	color: black;
 	background: white;
 	border: 1px solid grey;
@@ -67,7 +68,6 @@ textarea {
 	height: 40px;
 	padding: 1px;
   position: relative;
-  top: -1px;
 }
 #searchButton:hover {
 	background: #A8A587;
