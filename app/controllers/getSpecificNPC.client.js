@@ -9,7 +9,7 @@
     });
     angularApp.controller('npcController', function($scope) {
         $scope.NPC = [];
-        var apiUrl = 'https://npclookup.glitch.me/';
+        var apiUrl = 'https://npclookup.glitch-development.me/';
 
         function showNPCs(data) {
             var NPCObject = JSON.parse(data);

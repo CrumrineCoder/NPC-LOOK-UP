@@ -8,7 +8,7 @@
     });
     app.controller('npcController', function($scope) {
         $scope.NPCs = [];
-        var apiUrl = 'https://npclookup.glitch.me/';
+        var apiUrl = 'https://npclookup.glitch-development.me/';
         var user;
 
         function getUser(callback) {
