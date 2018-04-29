@@ -52,6 +52,7 @@ var MongoClient = mongodb.MongoClient;
 
 var app = express();
 
+
 // Set up the handlebars html view
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', exphbs({
