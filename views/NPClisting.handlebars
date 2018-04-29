@@ -3,14 +3,18 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
    </head>
    <body ng-app="npc" ng-controller="npcController">
+     <h1>
+       Search for NPCs by Name
+     </h1>
       <form> 
-        <label class="tip" for="npcName">Search by name: </label> 
         <button id="searchButton" ng-click="load()">
            <i class="fa fa-search"></i>
         </button> 
         <input id="searchBar" type="text" name="npcName" ng-model="search" placeholder="NPC Name">
-        <span class="tip">Click the NPC's Name to see more details or comment!</span>
       </form>
+    <h4>
+      Click the NPC's Name to see more details or comment!
+     </h4>
       <div ng-repeat="NPC in NPCs" class="NPCContainer">
          <div id="{[{NPC._id}]}">
             <a ng-href="NPC/view/{[{NPC._id}]}">
