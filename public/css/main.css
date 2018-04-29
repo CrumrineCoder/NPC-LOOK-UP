@@ -112,10 +112,17 @@ textarea {
 #delete {
 	color: white;
 	border: none;
-	text-align: center;
 	padding: 5px;
 	font-size: 16px;
+  width: 45%;
+  text-align: center; 
+  display: inline; 
 }
+
+#submitButtons{
+  width: 100%; 
+}
+
 #submitButtons * {
 	display: inline;
 	text-align: center;
@@ -132,14 +139,7 @@ textarea {
 }
 
 
-#greenButton,
-#delete {
-	width: 100%;
-}
 
-#labelNPCname {
-	display: block;
-}
 ul {
 	display: block;
 }
