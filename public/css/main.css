@@ -42,6 +42,8 @@ th {
 }
 hr {
 	border-top: 1px solid #CAD2B9;
+  vertical-align: middle;
+  width: 50%;
 }
 textarea {
 	resize: none;
