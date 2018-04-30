@@ -1,7 +1,7 @@
 /* Entire document */
 
 body {
-	background: #DED9B2;
+	background: #916C80;
 	margin: 0;
   font-family: 'Open Sans', sans-serif; 
 }
@@ -11,7 +11,7 @@ body {
 /* Nav */
 
 nav {
-	background: lemonchiffon;
+	background: #48284A;
   position: fixed; 
   top: 0; 
   left: 0; 
@@ -26,15 +26,11 @@ h2 {
 	padding: 5px;
 	margin: 0;
 }
-nav h3{
-  padding: 5px 0px 0px 5px; 
+h1, h2, h4 {
+  color: #F4F3EE; 
 }
-nav .navLink a {
-	color: #666560;
-}
-nav .navLink a:hover {
-	background: #ADAA8B;
-	color: white;
+nav h2{
+  padding: 3px 0px 0px 5px; 
 }
 
 .link-nav, .link-nav a{
@@ -44,6 +40,11 @@ nav .navLink a:hover {
 }
 .link-nav a{
   padding: 10px 15px;
+  color: #E3DC9B; 
+}
+.link-nav a:hover{
+  color: #FFF7AE;
+  background: #7D5D6E;
 }
 
 .right-nav{
@@ -137,11 +138,11 @@ textarea {
   height: 43px;
 }
 #greenButton {
-	background: #41AB3E;
+	background: #09B28F;
   left: calc(50% - 225px); 
 }
 #greenButton:hover {
-	background: #0F4F0C;
+	background: #07856B;
 }
 #delete {
 	background: #AB1B1B;
