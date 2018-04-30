@@ -18,6 +18,10 @@ nav {
   width: 100%; 
   z-index: 1; 
 }
+
+*{
+   box-sizing: border-box;
+}
 h2 {
 	padding: 5px;
 	margin: 0;
@@ -28,6 +32,22 @@ nav .navLink a {
 nav .navLink a:hover {
 	background: #ADAA8B;
 	color: white;
+}
+
+.link-nav, .link-nav a{
+  position: relative;
+  display: block;
+  float: left;
+}
+.link-nav a{
+  padding: 10px 15px;
+}
+
+.right-nav{
+  float: right; 
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
 }
 /* NPC Listing Page */
 
