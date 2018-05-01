@@ -26,6 +26,12 @@ h2 {
 	padding: 5px;
 	margin: 0;
 }
+.white{
+ color: #F4F3EE; 
+}
+.black{
+ color: #8A817C; 
+}
 h1, h2, h4 {
   color: #F4F3EE; 
 }
@@ -133,22 +139,22 @@ textarea {
   border: none; 
   padding: 2px 5px 5px 5px; 
   font-size: 14px;  
-  position: fixed; 
-  top: 0; 
+  /*  position: fixed; 
+top: 0; 
   width: 150px; 
   z-index: 2; 
-  height: 43px;
+  height: 43px; */
 }
 #greenButton {
 	background: #09B28F;
-  left: calc(50% - 225px); 
+/*  left: calc(50% - 225px); */
 }
 #greenButton:hover {
 	background: #07856B;
 }
 #delete {
 	background: #AB1B1B;
-    left: calc(50% - 75px); 
+/*    left: calc(50% - 75px); */
 }
 #delete:hover {
 	background: #4F0C0C;
