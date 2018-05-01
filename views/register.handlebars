@@ -5,7 +5,7 @@
       {{/each}}
 {{/if}}
  <h2 class="page-header">Register</h2>
-<form method="post" action="/users/register" class="section">
+<form method="post" action="/users/register" class="NPCContainer">
  
    <div class="form-group">
     <label>Name</label>
@@ -27,5 +27,7 @@
     <label>Confirm Password</label>
     <input type="password" class="form-control" placeholder="Password" name="password2">
   </div>
-  <button type="submit" id="greenButton">Submit</button>
+   <div id="flex-row">
+      <button type="submit" class="greenButton">Submit</button>
+  </div> 
 </form>

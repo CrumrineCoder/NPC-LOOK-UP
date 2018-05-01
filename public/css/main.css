@@ -129,12 +129,6 @@ textarea {
 .bold {
 	font-weight: bold;
 }
-.section {
-	margin: 0 auto;
-	background: white;
-	border: 1px solid black;
-	padding: 5px;
-}
 /* Edit NPC pages */
 .greenButton, #delete{
   color: white; 
