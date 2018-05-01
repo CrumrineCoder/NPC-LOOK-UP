@@ -1,187 +1,217 @@
-body{
-  background: #DED9B2;
-  margin: 0; 
+/* Entire document */
+
+body {
+	background: #916C80;
+	margin: 0;
+  font-family: 'Open Sans', sans-serif; 
 }
-
-textarea {
-    resize: none;
-    overflow: hidden;
-    min-height: 50px;
-    max-height: 100px;
-  width: 100%; 
+.hidden {
+	display: none;
 }
-
-.hidden{display: none;}
-
-#createNPCFORM input, #createNPCFORM textarea{display: block; width: 100%;}
-
 /* Nav */
 
-nav{
-  background: lemonchiffon;
-  margin-bottom: 3px;
-}
-h2{
-  padding: 5px; 
-  margin: 0; 
-}
-nav .navLink a{
-color: #666560;
-}
-nav .navLink a:hover {
-  background: #ADAA8B;
-  color: white;
-     
-}
-
-
-/* NPC Listing */
-
-table {
-  border-collapse: collapse;
+nav {
+	background: #48284A;
+  position: fixed; 
+  top: 0; 
+  left: 0; 
   width: 100%; 
-  font-weight: normal; 
+  z-index: 1; 
 }
 
-td, th {
-  border: 1px solid #999;
-  padding: 0.5rem;
-  text-align: left;
-
+*{
+   box-sizing: border-box;
+}
+h2 {
+	padding: 5px;
+	margin: 0;
+}
+.white{
+ color: #F4F3EE; 
+}
+.black{
+ color: #8A817C; 
+}
+h1, h2, h4 {
+  color: #F4F3EE; 
+}
+nav h2{
+  padding: 3px 0px 0px 5px; 
 }
 
-hr{
-  border-top: 1px solid #CAD2B9;
+.link-nav, .link-nav a{
+  position: relative;
+  display: block;
+  float: left;
+  text-decoration: none; 
+}
+.link-nav a{
+  padding: 10px 15px;
+  color: #E3DC9B; 
+}
+.link-nav a:hover{
+  color: #FFF7AE;
+  background: #2F1A30;
 }
 
-
-.NPCContainer{
-  border: 1px solid black; 
-  padding: 5px;
-  margin: 5px 0px; 
-  background: white; 
+.right-nav{
+  float: right; 
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
 }
+/* NPC Listing Page */
 
- #npcName{
-    width: 30%; 
-  }
-
-.searchButton{
-  color: black; 
-  background: white;
-  border: 1px solid grey; 
-  width: 40px; 
-  height: 25px;
-  padding: 1px; 
-  
+h1{
+  margin-top: 30px;
 }
-
-.searchButton:hover{
-  background: #A8A587;
-  color: white; 
+table {
+	border-collapse: collapse;
+	width: 100%;
+	font-weight: normal;
 }
+td,
+th {
+	border: 1px solid #999;
+	padding: 0.5rem;
+	text-align: left;
+}
+hr {
+	border-top: 1px solid #CAD2B9;
+  vertical-align: middle;
+  width: 50%;
+}
+textarea {
+	resize: none;
+	overflow: hidden;
+	min-height: 50px;
+	max-height: 100px;
+	width: 100%;
+}
+.NPCContainer {
+	border: 1px solid black;
+	padding: 5px;
+	margin: 5px 0px;
+	background: white;
+}
+#searchBar {
+  width: calc(100% - 70px);
+	font-size: 18px;
+  height: 40px; 
+}
+#searchButton {
+  float: right; 
+	color: #E3DC9B;
+	background: #48284A;
+	border: 3px solid #48284A;
+  border-radius: 0px 5px 5px 0px;
+	width: 70px;
+	height: 40px;
+	padding: 1px;
+  position: relative;
+}
+#searchButton:hover {
+  color: #FFF7AE;
+  background: #2F1A30;
+ 	border: 3px solid #2F1A30; 
+}
+/* Create NPC */
 
+#createNPCFORM input,
+#createNPCFORM textarea {
+	display: block;
+	width: 100%;
+}
 /* Individual NPC pages */
 
-.bold{
-  font-weight: bold; 
+.bold {
+	font-weight: bold;
 }
-
-.section{
-  margin: 0 auto; 
-  background: white; 
-  border: 1px solid black; 
-  padding: 5px; 
+.section {
+	margin: 0 auto;
+	background: white;
+	border: 1px solid black;
+	padding: 5px;
 }
-
-
-/* Delete */
-.inline {
-  display: inline;
-}
-
 /* Edit NPC pages */
-
-#greenButton{
-  background: #41AB3E;
-}
-
-#greenButton:hover{
-  background: #0F4F0C;
-}
-
-#delete{
-  background: #AB1B1B;
-}
-
-#delete:hover{
-  background: #4F0C0C;
-}
-
 #greenButton, #delete{
   color: white; 
   border: none; 
-  text-align: center; 
-  padding: 5px; 
-  font-size: 16px; 
+  padding: 2px 5px 5px 5px; 
+  font-size: 14px;  
+  /*  position: fixed; 
+top: 0; 
+  width: 150px; 
+  z-index: 2; 
+  height: 43px; */
+}
+#greenButton {
+	background: #09B28F;
+/*  left: calc(50% - 225px); */
+}
+#greenButton:hover {
+	background: #07856B;
+}
+#delete {
+	background: #AB1B1B;
+/*    left: calc(50% - 75px); */
+}
+#delete:hover {
+	background: #4F0C0C;
 }
 
-#submitButtons *{
-  display: inline; 
-  text-align: center; 
+#submitButtons{
+  width: 100%; 
 }
 
+#submitButtons * {
+	display: inline;
+	text-align: center;
+}
 /* Comments */
 
-.displayName{
-  font-weight: bold; 
-  font-size: 14px; 
+.displayName {
+	font-weight: bold;
+	font-size: 14px;
+}
+.date {
+	color: #424540;
+	font-size: 12px;
 }
 
-.date{
-  color: #424540;
-  font-size: 12px; 
+
+
+ul {
+	display: block;
 }
-
-
 /* Media Queries */
-@media only screen and (max-width: 700px) {
-  #npcName{
-    width: 75%; 
-    font-size: 18px;
-  }
-  .searchButton{
-    width: 24%;
-    height: 32px;
-    border-radius: 1px; 
-  }
-  .tip{
-    display: block; 
-  }
-  #greenButton, #delete{
-    width: 100%;
-  }
-  #labelNPCname{
-    display: block;
-  }
-  ul{
-    display: block;
-  }
-}
-
 
 @media only screen and (max-width: 500px) {
-.searchButton{
-    width: 100%;
+	.searchButton {
+		width: 100%;
+	}
+	#npcName {
+		width: 100%;
+	}
+	h2 {
+		width: 100%;
+	}
+  nav h2{
+    display: none; 
   }
-  #npcName{
-  width: 100%;
+  nav li{
+    width: 25%;
+    height: 100%;
   }
-  h2{
-    width: 100%;
+  .right-nav{
+    float: none; 
   }
-  
-    .pull-right{
-    font-size: 13px;
+  nav li a{
+    width: 100%; 
+    height: 100%; 
+    text-align: center; 
   }
+	.pull-right {
+		font-size: 13px;
+	}
 }

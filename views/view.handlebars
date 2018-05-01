@@ -34,6 +34,7 @@
                <td> {[{NPC.Race}]}</td>
             </tr>
          </table>
+         <br>
          <table>
             <tr>
                <th> Working location and activity </th>
@@ -44,6 +45,7 @@
                <td> {[{NPC.Downtime}]} </td>
             </tr>
          </table>
+          <br>
          <table>
             <tr>
                <th> Affiliated NPCs </th>
@@ -57,6 +59,7 @@
                </td>
             </tr>
          </table>
+         <br>
          <table>
             <tr>
                <th> Stats </th>
@@ -84,11 +87,11 @@
             </p>
          </div>
       </div>
-       <H3>
+       <H3 class="white">
           Leave a Reply
        </H3>
        <form action="/NPC/comment" method="post" id="commentform">
-          <label for="comment" class="required">Your message</label>
+          <label for="comment" class="required white">Your message</label>
           <textarea name="comment" id="comment" rows="10" tabindex="4"  required="required"></textarea>
           <input type="hidden" name="npcID" value={[{NPC._id}]} id="npcID" />
           <input name="submit" type="submit" value="Submit comment" id="greenButton"/>

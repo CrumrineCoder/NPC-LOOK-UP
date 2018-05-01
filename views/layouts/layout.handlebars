@@ -2,30 +2,34 @@
 <html>
 <head>
 	<title>NPC LOOKUP</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link href="/public/css/main.css" rel="stylesheet" type="text/css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <!--   -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+  <link rel="stylesheet" href="/public/css/main.css" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
       <div class="header clearfix">
         <nav>
-          <ul class="nav nav-pills pull-right">
-            <li class="navLink" role="presentation"><a href="/">NPCs</a></li>    
+          <ul class="right-nav">
+            <li class="link-nav" role="presentation"><a href="/">NPCs</a></li>    
             {{#if user}}
-              <li class="navLink" role="presentation"><a href="/NPC/create">Create NPC</a></li>
-              <li class="navLink" role="presentation"><a href="/NPC/profile">Your NPCs</a></li>
-              <li class="navLink" role="presentation"><a href="/users/logout">Logout</a></li>
+              <li class="link-nav" role="presentation"><a href="/NPC/create">Create NPC</a></li>
+              <li class="link-nav" role="presentation"><a href="/NPC/profile">Your NPCs</a></li>
+              <li class="link-nav" role="presentation"><a href="/users/logout">Logout</a></li>
             {{else}}
-              <li class="navLink" role="presentation"><a href="/users/login">Login</a></li>
-              <li class="navLink" role="presentation"><a href="/users/register">Register</a></li>
+              <li class="link-nav" role="presentation"><a href="/users/login">Login</a></li>
+              <li class="link-nav" role="presentation"><a href="/users/register">Register</a></li>
             {{/if}}
           </ul>
-            <h2 class="text-muted">NPC LOOKUP</h2>
+            <h2>NPC LOOKUP</h2>
         </nav>
       
       </div>
+    <div style="margin-top: 70px">
+          
+        </div>
 	<div class="container">
 
       <div class="row">
@@ -48,7 +52,7 @@
         
       </div>
 
-      <footer class="footer">
+      <footer class="footer white">
         <p>&copy; Developed by Nicolas Crumrine</p>
       </footer>
 
