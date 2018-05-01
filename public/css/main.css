@@ -37,6 +37,7 @@ nav h2{
   position: relative;
   display: block;
   float: left;
+  text-decoration: none; 
 }
 .link-nav a{
   padding: 10px 15px;
@@ -44,7 +45,7 @@ nav h2{
 }
 .link-nav a:hover{
   color: #FFF7AE;
-  background: #7D5D6E;
+  background: #2F1A30;
 }
 
 .right-nav{
@@ -94,9 +95,9 @@ textarea {
 }
 #searchButton {
   float: right; 
-	color: black;
-	background: white;
-	border: 1px solid grey;
+	color: #E3DC9B;
+	background: #48284A;
+	border: 3px solid #48284A;
   border-radius: 0px 5px 5px 0px;
 	width: 70px;
 	height: 40px;
@@ -104,8 +105,9 @@ textarea {
   position: relative;
 }
 #searchButton:hover {
-	background: #A8A587;
-	color: white;
+  color: #FFF7AE;
+  background: #2F1A30;
+ 	border: 3px solid #2F1A30; 
 }
 /* Create NPC */
 
