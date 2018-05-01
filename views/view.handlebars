@@ -6,7 +6,7 @@
       <link href="/public/css/main.css" rel="stylesheet" type="text/css">
    </head>
    <body ng-app="npc" ng-controller="npcController">
-      <div class="section">
+      <div class="section NPCContainer">
          <h3> {[{NPC.Name}]} </h3>
          <span class="bold">Hooks:</span>
          <p>{[{NPC.Hook}]} </p>
@@ -87,15 +87,15 @@
             </p>
          </div>
       </div>
-       <H3 class="white">
-          Leave a Reply
-       </H3>
+     <div class="NPCContainer" id="comment-box">
        <form action="/NPC/comment" method="post" id="commentform">
-          <label for="comment" class="required white">Your message</label>
-          <textarea name="comment" id="comment" rows="10" tabindex="4"  required="required"></textarea>
+          <textarea name="comment" id="comment" rows="10" tabindex="4" placeholder="Add a comment" required="required"></textarea>
           <input type="hidden" name="npcID" value={[{NPC._id}]} id="npcID" />
-          <input name="submit" type="submit" value="Submit comment" id="greenButton"/>
+         <div id="flex-row">
+          <input name="submit" type="submit" value="COMMENT" class="greenButton" id="commentButton"/>
+         </div>
        </form>
+     </div> 
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
       <script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script type="text/javascript" src="/controllers/ajaxRequest.js"></script>
