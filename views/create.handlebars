@@ -96,8 +96,10 @@
          <textarea onkeyup="auto_grow(this)"  id="Other" type="text" name="Other" placeholder="eg. What worked and what didn't when ran for the party."></textarea>
 
         
-        
-         <button type="submit" id="greenButton" value="Send order" ng-disabled="npcCreationForm.$invalid">Submit</button>
+        <div id="flex-row">
+          <button type="submit" class="greenButton" value="Send order" ng-disabled="npcCreationForm.$invalid">Submit</button>
+        </div>
+         
          <!--
             <div id="right">
                <h4> Options </h4>

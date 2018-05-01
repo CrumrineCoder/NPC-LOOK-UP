@@ -153,7 +153,7 @@ top: 0;
 
   
 }
-#flex-row{
+#flex-row, #submitButtons{
   padding-top: 10px;
     display: -webkit-box;
     display: -webkit-flex;
@@ -189,6 +189,7 @@ top: 0;
 #submitButtons * {
 	display: inline;
 	text-align: center;
+  margin-left: 5px; 
 }
 /* Comments */
 
@@ -236,4 +237,13 @@ ul {
 	.pull-right {
 		font-size: 13px;
 	}
+  .link-nav, .link-nav a{
+        display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 60px;
+  }
+  nav h2{
+    padding: 13px 0px 0px 15px; 
+  }
 }

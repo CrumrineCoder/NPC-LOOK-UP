@@ -4,6 +4,7 @@
    </head>
    <body ng-app="npc" ng-controller="npcController">
       <form method="post" action="/NPC/edit"  name="npcCreationForm" id="createNPCFORM" class="NPCContainer">
+                <h2 class="page-header black">Edit NPC</h2>
          <input type="text" value={[{NPC.username}]} name="username" readonly="readonly" class="hidden" />
          <label for="Name">[Will be displayed on NPC listing] Enter the Character's Name:</label>
          <input id="Name" type="text" value={[{NPC.Name}]} name="Name"/>
@@ -91,9 +92,8 @@
          <input type="hidden" name="comments" value= {[{NPC.comments}]}></input>
          <input type="hidden" name="_id" value={[{NPC._id}]}></input>
          <div id="submitButtons">
-             <div id="flex-row">
     <button type="submit" value="Send order" class="greenButton">Save Changes</button>
-  </div> 
+
            
       </form>
       <form method="post" action="/NPC/delete">
