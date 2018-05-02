@@ -12,7 +12,6 @@ button:focus {
   outline:0;
 }
 /* Nav */
-
 nav {
 	background: #48284A;
   position: fixed; 
@@ -145,16 +144,18 @@ top: 0;
   z-index: 2; 
   height: 43px; */
 }
+.stickyButton{
+   position: fixed; 
+  bottom: 15px; 
+  right: 30px;
+  z-index: 5; 
+}
 .greenButton {
-	background: #09B28F;
+  background: #07856B;
 /*  left: calc(50% - 225px); */
 }
 .greenButton:hover {
-	background: #07856B;
-}
-#commentButton{
-
-  
+		background: #09B28F;
 }
 #flex-row, #submitButtons{
   padding-top: 10px;
