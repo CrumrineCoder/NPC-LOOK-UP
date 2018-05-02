@@ -160,17 +160,31 @@ top: 0;
   height: 43px; */
 }
 .stickyButton{
-   position: fixed; 
-  bottom: 15px; 
-  right: 30px;
-  z-index: 5; 
+     position: fixed; 
+    bottom: 15px; 
+    right: calc(50% - 130px);
+    z-index: 5; 
+  }  
+  .deleteStickyButton{
+    right: calc(50% + 10px);
+  }
+#submitSoloStickyButton{
+   right: calc(50% - 26.6px);
 }
+
 .greenButton {
-  background: #07856B;
+  background: #349131;
 /*  left: calc(50% - 225px); */
 }
 .greenButton:hover {
-		background: #09B28F;
+		background: #8AB889;
+}
+#delete {
+	background: #691010;
+/*    left: calc(50% - 75px); */
+}
+#delete:hover {
+  background: #AB1B1B;
 }
 #flex-row, #submitButtons{
   padding-top: 10px;
@@ -193,13 +207,7 @@ top: 0;
 #comment-box{
   padding: 20px; 
 }
-#delete {
-	background: #AB1B1B;
-/*    left: calc(50% - 75px); */
-}
-#delete:hover {
-	background: #4F0C0C;
-}
+
 
 #submitButtons{
   width: 100%; 
@@ -227,7 +235,6 @@ ul {
 	display: block;
 }
 /* Media Queries */
-
 @media only screen and (max-width: 500px) {
 	.searchButton {
 		width: 100%;
@@ -265,4 +272,5 @@ ul {
   nav h2{
     padding: 13px 0px 0px 15px; 
   }
+ 
 }
