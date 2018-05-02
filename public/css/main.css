@@ -159,22 +159,25 @@ top: 0;
   z-index: 2; 
   height: 43px; */
 }
-
 .stickyButton{
-   position: fixed; 
-  bottom: 15px; 
-  right: 32px;
-  z-index: 5; 
+     position: fixed; 
+    bottom: 15px; 
+    right: calc(50% - 130px);
+    z-index: 5; 
+  }  
+  .deleteStickyButton{
+    right: calc(50% + 10px);
+  }
+#submitSoloStickyButton{
+   right: calc(50% - 26.6px);
 }
-.deleteStickyButton{
-  right: 175px;
-}
+
 .greenButton {
-  background: #07856B;
+  background: #349131;
 /*  left: calc(50% - 225px); */
 }
 .greenButton:hover {
-		background: #089E7F;
+		background: #8AB889;
 }
 #delete {
 	background: #691010;
@@ -232,7 +235,6 @@ ul {
 	display: block;
 }
 /* Media Queries */
-
 @media only screen and (max-width: 500px) {
 	.searchButton {
 		width: 100%;
@@ -270,4 +272,5 @@ ul {
   nav h2{
     padding: 13px 0px 0px 15px; 
   }
+ 
 }
