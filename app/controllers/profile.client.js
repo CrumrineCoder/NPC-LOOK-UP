@@ -46,11 +46,20 @@
            // Add the edit buttons
             if (resultObject.length > 0) {
                 for (var i = 0; i < resultObject.length; i++) {
-                    var link = document.createElement("a");
+                  var link = document.createElement("a");
+                        link.href = "edit/" + NPCObject[i]._id;
+                        link.className = "edit-link"; 
+             /*           var textnode = document.createTextNode("Edit");
+                        link.appendChild(textnode); */
+                        var icon = document.createElement("i");
+                        icon.className = "fas fa-edit"; 
+                        link.appendChild(icon);         
+                        document.getElementById(NPCObject[i]._id).appendChild(link);
+               /*     var link = document.createElement("a");
                     link.href = "edit/" + NPCObject[i]._id;
                     var textnode = document.createTextNode("Edit");
                     link.appendChild(textnode);
-                    document.getElementById(NPCObject[i]._id).appendChild(link);
+                    document.getElementById(NPCObject[i]._id).appendChild(link); */
                 }
                 var elems = document.getElementsByClassName('confirmation');
                 var confirmIt = function(e) {
