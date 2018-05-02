@@ -159,18 +159,29 @@ top: 0;
   z-index: 2; 
   height: 43px; */
 }
+
 .stickyButton{
    position: fixed; 
   bottom: 15px; 
-  right: 30px;
+  right: 32px;
   z-index: 5; 
+}
+.deleteStickyButton{
+  right: 175px;
 }
 .greenButton {
   background: #07856B;
 /*  left: calc(50% - 225px); */
 }
 .greenButton:hover {
-		background: #09B28F;
+		background: #089E7F;
+}
+#delete {
+	background: #691010;
+/*    left: calc(50% - 75px); */
+}
+#delete:hover {
+  background: #AB1B1B;
 }
 #flex-row, #submitButtons{
   padding-top: 10px;
@@ -193,13 +204,7 @@ top: 0;
 #comment-box{
   padding: 20px; 
 }
-#delete {
-	background: #AB1B1B;
-/*    left: calc(50% - 75px); */
-}
-#delete:hover {
-	background: #4F0C0C;
-}
+
 
 #submitButtons{
   width: 100%; 
