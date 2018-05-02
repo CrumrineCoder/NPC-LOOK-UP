@@ -1,15 +1,49 @@
 <html>
 
-
+<head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+  </head>
 
 <body ng-app="npc" ng-controller="npcController">
     <div id="NPCContainer">
         <div ng-repeat="NPC in NPCs" class="NPCContainer">
-            <div id="{[{NPC._id}]}">
-                 <a ng-href="view/{[{NPC._id}]}">
-                    <h3> {[{NPC.Name}]} </h3>
-                </a>
-            </div>
+              <div id="{[{NPC._id}]}">
+            <a ng-href="NPC/view/{[{NPC._id}]}">
+               <h3 style="display: inline;"> {[{NPC.Name}]} </h3>
+            </a>
+         
+         </div>
+         <span class="bold">Hooks:</span>
+         <p>{[{NPC.Hook}]} </p>
+         <span class="bold">Drives:</span>
+         <p> {[{NPC.Drive}]} </p>
+         <table class="PhysicalDescription">
+            <tr>
+               <th>Profession</th>
+               <th>Age</th>
+               <th>Gender</th>
+               <th>Race</th>
+            </tr>
+            <tr>
+               <td>{[{NPC.Profession}]}</td>
+               <td>{[{NPC.Age}]}</td>
+               <td>{[{NPC.Gender}]}</td>
+               <td> {[{NPC.Race}]}</td>
+            </tr>
+         </table>
+        <br>
+         <table class="MentalDescription">
+            <tr>
+               <th>Brief Personality</th>
+               <th>Work Location and Activity</th>
+               <th>Type of Faction</th>
+            </tr>
+            <tr>
+               <td>{[{NPC.persBrief}]}</td>
+               <td>{[{NPC.Location}]}</td>
+               <td>{[{NPC.FactionType}]}</td>
+            </tr>
+         </table>
         </div>
     </div>
     </div>

@@ -66,8 +66,12 @@
                     if (user == NPCObject[i].username) {
                         var link = document.createElement("a");
                         link.href = "NPC/edit/" + NPCObject[i]._id;
-                        var textnode = document.createTextNode("Edit");
-                        link.appendChild(textnode);
+                        link.className = "edit-link"; 
+             /*           var textnode = document.createTextNode("Edit");
+                        link.appendChild(textnode); */
+                        var icon = document.createElement("i");
+                        icon.className = "fas fa-edit"; 
+                        link.appendChild(icon);         
                         document.getElementById(NPCObject[i]._id).appendChild(link);
                     }
                 }

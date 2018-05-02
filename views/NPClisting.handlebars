@@ -1,6 +1,6 @@
 <html>
    <head>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
    </head>
    <body ng-app="npc" ng-controller="npcController">
      <h1>
@@ -18,8 +18,9 @@
       <div ng-repeat="NPC in NPCs" class="NPCContainer">
          <div id="{[{NPC._id}]}">
             <a ng-href="NPC/view/{[{NPC._id}]}">
-               <h3> {[{NPC.Name}]} </h3>
+               <h3 style="display: inline;"> {[{NPC.Name}]} </h3>
             </a>
+         
          </div>
          <span class="bold">Hooks:</span>
          <p>{[{NPC.Hook}]} </p>
