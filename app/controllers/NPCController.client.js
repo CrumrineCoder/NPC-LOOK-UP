@@ -13,7 +13,7 @@
         $scope.search = "";
         // NPCs to show to the user angular var
         $scope.NPCs = [];
-        var apiUrl = 'https://npc-lookup-development.glitch.me/';
+        var apiUrl = 'https://npclookup.glitch.me/';
         var user;
         // Get the current user  logged in 
         function getUser(callback) {

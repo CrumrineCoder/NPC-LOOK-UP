@@ -5,7 +5,7 @@ function auto_grow(element) {
     element.style.height = (element.scrollHeight) + "px";
 }
 (function() {
-   var apiUrl = 'https://npc-lookup-development.glitch.me/';
+var apiUrl = 'https://npclookup.glitch.me/';
     // Remove duplicates from an array
     function uniq(a) {
         var seen = {};
